@@ -19,13 +19,15 @@ class MovieDetails extends React.Component {
     async componentDidMount() {
         // const omdbRes = await omdb.get(`i=${movieById.data.imdb_id}`);
         // console.log(omdbRes);
+        const omdb_key = "bc901512&i";
+        const tmdb_key = "b0a20e995baa08cdd818c57bcd38ffd1";
         this.setState({ isLoading: true });
         const { id } = this.props.match.params
-        const movieById = await tmdb.get(`movie/${id}?api_key=b0a20e995baa08cdd818c57bcd38ffd1&language=en-US&include_video=true`);
+        const movieById = await tmdb.get(`movie/${id}?${tmdb_key}&language=en-US&include_video=true`);
         const imdbId = await movieById.data.imdb_id;
-        const trailer = await tmdb.get(`movie/${imdbId}/videos?api_key=b0a20e995baa08cdd818c57bcd38ffd1&language=en-US`);
-        const omdbRes = await omdb.get(`?apikey=bc901512&i=${imdbId}`);
-        const peoplesId = await tmdb.get(`movie/${id}/credits?api_key=b0a20e995baa08cdd818c57bcd38ffd1&language=en-US`)
+        const trailer = await tmdb.get(`movie/${imdbId}/videos?${tmdb_key}&language=en-US`);
+        const omdbRes = await omdb.get(`?${omdb_key}=${imdbId}`);
+        const peoplesId = await tmdb.get(`movie/${id}/credits?${tmdb_key}&language=en-US`)
         // console.log(omdbRes);
         // console.log(movieById);
         // console.log(peoplesId);
