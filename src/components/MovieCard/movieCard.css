@@ -1,0 +1,42 @@
+
+.now-playing{
+    display: flex;
+    justify-content: space-between;
+}
+.movie-card{
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    margin: 22px;
+    
+}
+.poster{
+    width:201px;
+}
+.movie-title{
+    position: absolute;
+    color: cornsilk;
+    background-color: rgba(128, 128, 128, 0.404);
+    bottom: 8px;  
+    font-weight: 500;
+    font-size: 1.5rem;
+    right: 4px;
+    left:4px;
+}
+.release-date{
+    position: absolute;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 1.5rem;
+    top: 8px;  
+    left:4px;
+}
+.avg-vote{
+    position: absolute;
+    display: flex;
+    color: gold;
+    font-weight: 500;
+    font-size: 1.5rem;  
+    top: 8px;
+    right: 4px;
+}
