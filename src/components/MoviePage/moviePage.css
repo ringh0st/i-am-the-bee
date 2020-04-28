@@ -1,6 +1,6 @@
 *{
     color:white;
-    background-color: rgb(8, 8, 8);
+    background-color: rgb(26, 25, 25);
 }
 .container{
 height: 100vh;
@@ -24,7 +24,7 @@ margin: 20px;
 }
 .title{
     font-size: 3rem;
-    color:gold;
+    color:#DCCC37;
 }
 .year{
     font-size: 1.5rem;
@@ -69,4 +69,13 @@ align-items:flex-start ;
 
 .character{
     font-size: 0.8rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.bee-icon{
+    width: 80px;
 }

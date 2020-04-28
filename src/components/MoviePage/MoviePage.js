@@ -2,7 +2,7 @@ import React from "react";
 import "../MoviePage/moviePage.css";
 import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
-
+import icon from '../../images/beeandtextlogo.png';
 
 const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieCast}) => {
     const opts = {
@@ -18,9 +18,12 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
         <>
 
             <div className="container">
+                <nav className="navbar">
                 <Link to={"/"} >
-                    <div className="home-button">Home</div>
+                    <img className="bee-icon" alt="icon" src={icon}></img>
+                    {/* <div className="home-button">Home</div> */}
                 </Link>
+                </nav>
                 <div className="header">
                     <img className="poster" alt={title} src={movie.poster}></img>
                     <div className="movie-main-info">

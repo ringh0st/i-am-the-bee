@@ -10,7 +10,7 @@ class HomePage extends React.Component {
     render(){
         return(
             <BrowserRouter>
-                <Route path="/" exact component={LatestMovies} />
+                <Route path="/latest/page/:id" exact component={LatestMovies} />
                 <Route path="/nowplaying" component={NowPlaying} />
                 <Route path="/moviedetails/:id" component={MovieDetails} />
             </BrowserRouter>

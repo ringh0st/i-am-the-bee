@@ -2,6 +2,7 @@
 .now-playing{
     display: flex;
     justify-content: space-between;
+    height: 50vh;
 }
 .movie-card{
     position: relative;
@@ -34,7 +35,7 @@
 .avg-vote{
     position: absolute;
     display: flex;
-    color: gold;
+    color: #DCCC37;
     font-weight: 500;
     font-size: 1.5rem;  
     top: 8px;
