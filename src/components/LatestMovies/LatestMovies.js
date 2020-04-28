@@ -110,7 +110,7 @@ class LatestMovies extends React.Component {
         return (
             <>
                 <nav className="navbar">
-                    <Link to={"/"} >
+                    <Link to={"/latest/page/1"} >
                         <img className="bee-icon" alt="icon" src={icon}></img>
                     </Link>
                 </nav>
@@ -124,6 +124,7 @@ class LatestMovies extends React.Component {
                 </div>
                 <button onClick={this.previousPage} disabled={this.state.disabled} style={{fontSize:'20px'}}>&#10218;Previous</button>
                 <button onClick={this.nextPage} disabled={this.state.disabledNext} style={{fontSize:'20px'}}>Next&#10219;</button>
+                
                 {/* <Pagination nextPage={this.nextPage}/> */}
             </>
         )

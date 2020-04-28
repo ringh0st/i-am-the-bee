@@ -2,6 +2,7 @@ import React from "react";
 import "../MoviePage/moviePage.css";
 import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
+import { useHistory } from "react-router-dom";
 import icon from '../../images/beeandtextlogo.png';
 
 const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieCast}) => {
@@ -13,16 +14,23 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
         //   autoplay: 1,
         }
     }
-
+    let history = useHistory();
+    
+    const onClickBack =()=>{
+        history.goBack(-1)
+        console.log("h");
+        
+    }
     return (
         <>
 
             <div className="container">
                 <nav className="navbar">
-                <Link to={"/"} >
-                    <img className="bee-icon" alt="icon" src={icon}></img>
+                <Link to={"/latest/page/1"} >
+                    <img  className="bee-icon" alt="icon" src={icon}></img>
                     {/* <div className="home-button">Home</div> */}
                 </Link>
+                <button onClick={onClickBack}>back</button>
                 </nav>
                 <div className="header">
                     <img className="poster" alt={title} src={movie.poster}></img>
