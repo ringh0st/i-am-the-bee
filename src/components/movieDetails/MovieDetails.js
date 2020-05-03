@@ -28,14 +28,10 @@ class MovieDetails extends React.Component {
         const trailer = await tmdb.get(`movie/${imdbId}/videos?api_key=${tmdb_key}&language=en-US`);
         const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${imdbId}`);
         const peoplesId = await tmdb.get(`movie/${id}/credits?api_key=${tmdb_key}&language=en-US`)
-        // console.log(omdbRes);
-        // console.log(movieById);
-        // console.log(peoplesId);
-        console.log(trailer);
-
         const castArr = peoplesId.data.cast
+        
         let castProfilePic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w200/${picPath}` : noProfilePic;
-
+        let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
         this.setState({ imdbId: imdbId });
         const movieCast = [];
         for (let i = 0; i < castArr.length; i++) {
@@ -45,7 +41,7 @@ class MovieDetails extends React.Component {
                 character: castArr[i].character
             })
         }
-        console.log(movieCast);
+
         this.setState({ movieCast: [...movieCast] });
         let years = (x) => {
             let y = x.split("-")
@@ -54,6 +50,7 @@ class MovieDetails extends React.Component {
         const trailerArr = trailer.data.results;
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w500/${x}` : noPoster;
         let trailerFunction = (trailerArr) => trailerArr.length !== 0 ? trailerArr[0].key : comingSoon;
+
         const movie = {
             title: movieById.data.title,
             year: years(movieById.data.release_date),
@@ -65,7 +62,8 @@ class MovieDetails extends React.Component {
             awards: omdbRes.data.Awards,
             genre: omdbRes.data.Genre,
             trailer1: trailerFunction(trailerArr),
-            director: omdbRes.data.Director
+            director: omdbRes.data.Director,
+            backgroundPic:backDropPic(movieById.data.backdrop_path)
             // trailer2:trailer.data.results[1].key,
             // trailer3:trailer.data.results[2].key
 

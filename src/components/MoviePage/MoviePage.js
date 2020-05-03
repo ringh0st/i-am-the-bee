@@ -2,8 +2,9 @@ import React from "react";
 import "../MoviePage/moviePage.css";
 import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import { useHistory } from "react-router-dom";
 import icon from '../../images/beeandtextlogo.png';
+import BackButton from '../BackButton/BackButton';
+// import Slider from '../Slider/Slider'
 
 const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieCast}) => {
     const opts = {
@@ -14,25 +15,21 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
         //   autoplay: 1,
         }
     }
-    let history = useHistory();
-    
-    const onClickBack =()=>{
-        history.goBack(-1)
-        console.log("h");
-        
-    }
+    let sectionStyle = {
+        // width: "100%",
+        // height: "400px",
+        backgroundImage: `url("${movie.backgroundPic}")`
+      };
     return (
         <>
-
             <div className="container">
                 <nav className="navbar">
                 <Link to={"/latest/page/1"} >
                     <img  className="bee-icon" alt="icon" src={icon}></img>
                     {/* <div className="home-button">Home</div> */}
                 </Link>
-                <button onClick={onClickBack}>back</button>
                 </nav>
-                <div className="header">
+                <div style={sectionStyle}className="header">
                     <img className="poster" alt={title} src={movie.poster}></img>
                     <div className="movie-main-info">
 
@@ -45,7 +42,9 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
                         {/* <i id='star' className='fa fa-star fa-fw'></i>
             <div className="tmdbRating">{tmdbRating}</div> */}
                         {/* </div> */}
+                        
                     </div>
+                    <BackButton/>
                 </div>
                 <div className="mainPage">
                     <div>Run time: {movie.runtime}min</div>
@@ -62,15 +61,15 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
                     <div className="cast">
                     {movieCast && movieCast.map((item, key) => {
                         return (
-                            <div className="actor">
+                            <div className="actor" key={key}>
                         <img className="actor-pic"alt={key} src={item.poster}></img>
                         <div className="actor-name">{item.name}</div>
-                        {/* <div className="as">As:</div> */}
                         <div className="character">{item.character}</div>
                         </div>
                         )
                     })}
                     </div>
+                    {/* <Slider cards={movieCast}/> */}
 
                 </div>
 
