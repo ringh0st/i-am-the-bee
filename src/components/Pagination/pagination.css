@@ -1,0 +1,39 @@
+/* *{
+    background-color: #5f9ea0;
+} */
+.pagination {
+    text-align: center;
+}
+.pagination button {
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 12px;
+    width: 3rem;
+    /* background-color: #DCCC37; */
+    border: 1px solid #DCCC37 ;
+    text-decoration: none;
+    /* transition: 0.4s; */
+    outline: none;
+    margin: 6px;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1); */
+    /* border: none; */
+    /* box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.4); */
+
+}
+.pagination .page-number:hover {
+    /* color: rgb(5, 3, 3); */
+    background-color: #DCCC37;
+    width: 3.1rem;
+    height: 3.1rem;
+    box-shadow: none;
+}
+
+
+.page-number .active:active {
+    /* color: blue; */
+    background-color: #DCCC37;
+    /* background-color: #DCCC37; */
+
+  }

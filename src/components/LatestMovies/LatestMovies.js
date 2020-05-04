@@ -15,34 +15,40 @@ let tmdbLatest = async (page) => {
 }
 
 let apiKey = "b0a20e995baa08cdd818c57bcd38ffd1";
-// let currentPage = this.props.match.params.id;
 class LatestMovies extends React.Component {
-    
+
 
 
     state = {
         tmdbData: null,
         page: null,
         movieItems: null,
-        // pageNumbers: null,
         activePage: null,
         disabled: false,
         disabledNext: false,
-        updateState: true
+        updateState: true,
+        buttonsForPagination: null
     };
 
-    async componentDidMount() {
-        // 
 
-        
+    async componentDidMount() { 
         this.setState({ tmdbData: await tmdbLatest(1) });
+        function detectMob() {
+            // console.log(window.innerHeight);
+            return ((window.innerWidth <= 800) && (window.innerHeight <= 600));
+        }
+        if (detectMob() === false) {
+            // console.log("this is a computer screen");
+            return this.setState({ buttonsForPagination: 5 })
+        }else{
+            return this.setState({ buttonsForPagination: 3 })  
+        }
+
     }
+
     componentDidUpdate() {
-
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
-        
-        let moviesArray = this.state.tmdbData.results;        
-
+        let moviesArray = this.state.tmdbData.results;
         let years = (x) => {
             let y = x.split("-")
             return (y[0])
@@ -65,39 +71,11 @@ class LatestMovies extends React.Component {
                 this.setState({ updateState: false })
 
             }
-            // console.log(this.state.movieItems);
-
         }
-
-
-
-        // const paging = {
-        //     total: this.state.tmdbData.data.total_results,
-        //     totalPages: this.state.tmdbData.data.total_pages,
-        //     perPage: this.state.tmdbData.data.results.length,
-        //     currentPage: currentPage
-        // }
-        // this.setState({
-        //     paging: paging
-        // })
-        // const pageNumbers = [];
-        // if (this.state.total !== null) {
-        //     for (let i = 1; i <= Math.ceil(this.state.total / this.state.perPage); i++) {
-        //         pageNumbers.push(i);
-        //     }
-        // }
-
-        // this.setState({
-        //     pageNumbers: pageNumbers
-        // })
-
-
     }
-    // handleClick = (e) => {
-    //     // 
-    // }
+
     handleClick = (data) => {
-        console.log(data);
+        // console.log(data);
 
 
         this.setState({ tmdbData: data, updateState: true })
@@ -110,7 +88,6 @@ class LatestMovies extends React.Component {
         // const styleButton = {
         //     padding:props.padding
         // }
-        // 
         return (
             <>
 
@@ -120,6 +97,7 @@ class LatestMovies extends React.Component {
                     </Link>
                 </nav>
                 <div className="now-playing">
+                    {/* {this.state.movcieItems && <DisplayMovies data=></DisplayMovies>} */}
                     {this.state.movieItems && this.state.movieItems.map((item, key) => {
                         return (
                             <MovieCard onClick={this.handleClick} tmdbId={item.tmdbId} key={key} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
@@ -127,7 +105,7 @@ class LatestMovies extends React.Component {
                     })
                     }
                 </div>
-                {this.state.tmdbData && <Pagination data={this.state.tmdbData} api={tmdbLatest} handleData={this.handleClick} />}
+                {this.state.tmdbData && this.state.buttonsForPagination && <Pagination buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatest} handleData={this.handleClick} buttonsForPagination={this.buttonsForPagination} />}
             </>
         )
     }
