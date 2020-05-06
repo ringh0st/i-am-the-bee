@@ -1,12 +1,10 @@
 import React from 'react';
-import tmdb from '../../apis/tmdb';
 import omdb from '../../apis/omdb';
-// import movieItem from '../LatestMovies/LatestMovies';
 import MoviePage from '../MoviePage/MoviePage';
 import noPoster from '../../images/no-poster-available.png';
-// import maleProfile from '../../images/MaleProfile.png';
 import comingSoon from '../../images/comingsoon.jpg';
 import noProfilePic from '../../images/noProfilepic.jpeg';
+import {fetchMovieById, fetchMovieTrailer, fetchPeoplesId} from '../../apis/tmdb';
 
 class MovieDetails extends React.Component {
 
@@ -14,25 +12,37 @@ class MovieDetails extends React.Component {
         imdbId: null,
         movie: {},
         movieCast: [],
-        isLoading: false
+        isLoading: false,
+        fetchMovieById: null,
+        fetchMovieTrailer:null,
+        fetchPeoplesId:null
+
     };
     async componentDidMount() {
-        // const omdbRes = await omdb.get(`i=${movieById.data.imdb_id}`);
-        // console.log(omdbRes);
-        const omdb_key = "bc901512";
-        const tmdb_key = "b0a20e995baa08cdd818c57bcd38ffd1";
-        this.setState({ isLoading: true });
         const { id } = this.props.match.params
-        const movieById = await tmdb.get(`movie/${id}?api_key=${tmdb_key}&language=en-US&include_video=true`);
-        const imdbId = await movieById.data.imdb_id;
-        const trailer = await tmdb.get(`movie/${imdbId}/videos?api_key=${tmdb_key}&language=en-US`);
-        const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${imdbId}`);
-        const peoplesId = await tmdb.get(`movie/${id}/credits?api_key=${tmdb_key}&language=en-US`)
-        const castArr = peoplesId.data.cast
+        console.log(id);
+        console.log(fetchMovieById(id));
         
+        
+        this.setState({ 
+            fetchMovieById: await fetchMovieById(id),
+            fetchPeoplesId: await fetchPeoplesId(id)
+        });
+    
+        const omdb_key = "bc901512";
+        this.setState({ 
+            isLoading: true,
+            imdbId:this.state.fetchMovieById.imdb_id,
+        });
+        
+
+        const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${this.state.imdbId}`);
+        const castArr = this.state.fetchPeoplesId.cast
+        this.setState({
+            fetchMovieTrailer:await fetchMovieTrailer(this.state.imdbId)
+        })
         let castProfilePic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w200/${picPath}` : noProfilePic;
         let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
-        this.setState({ imdbId: imdbId });
         const movieCast = [];
         for (let i = 0; i < castArr.length; i++) {
             movieCast.push({
@@ -47,29 +57,30 @@ class MovieDetails extends React.Component {
             let y = x.split("-")
             return (y[0])
         }
-        const trailerArr = trailer.data.results;
+        console.log(this.state.fetchMovieTrailer);
+
+        const trailerArr = this.state.fetchMovieTrailer.results;
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w500/${x}` : noPoster;
         let trailerFunction = (trailerArr) => trailerArr.length !== 0 ? trailerArr[0].key : comingSoon;
 
         const movie = {
-            title: movieById.data.title,
-            year: years(movieById.data.release_date),
-            poster: posterFunction(movieById.data.poster_path),
-            budget: movieById.data.budget,
-            runtime: movieById.data.runtime,
-            overView: movieById.data.overview,
+            title: this.state.fetchMovieById.title,
+            year: years(this.state.fetchMovieById.release_date),
+            poster: posterFunction(this.state.fetchMovieById.poster_path),
+            budget: this.state.fetchMovieById.budget,
+            runtime: this.state.fetchMovieById.runtime,
+            overView: this.state.fetchMovieById.overview,
             casts: omdbRes.data.Actors,
             awards: omdbRes.data.Awards,
             genre: omdbRes.data.Genre,
             trailer1: trailerFunction(trailerArr),
             director: omdbRes.data.Director,
-            backgroundPic:backDropPic(movieById.data.backdrop_path)
+            backgroundPic:backDropPic(this.state.fetchMovieById.backdrop_path)
             // trailer2:trailer.data.results[1].key,
             // trailer3:trailer.data.results[2].key
 
         }
         this.setState({ movie: movie, isLoading: false })
-        // console.log(movie.trailer);
 
 
     }

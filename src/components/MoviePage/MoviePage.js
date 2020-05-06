@@ -6,6 +6,7 @@ import icon from '../../images/beeandtextlogo.png';
 import BackButton from '../BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 
+
 const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieCast}) => {
     const opts = {
         height: '240',
@@ -20,6 +21,7 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
         // height: "400px",
         backgroundImage: `url("${movie.backgroundPic}")`
       };
+      
     return (
         <>
             <div className="container">

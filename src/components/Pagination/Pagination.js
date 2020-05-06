@@ -14,7 +14,7 @@ class Pagination extends React.Component {
         disableNext: false,
         disabledPrev: false,
         disabledPrevSet: false,
-        disabledNexrSet: false,
+        disabledNextSet: false,
         totalResults: null,
         pageNumbers: [],
         currentPosts: [],
@@ -48,7 +48,7 @@ class Pagination extends React.Component {
         let page = id;
         this.setState({ currentPage: this.state.currentPage })
         this.props.handleData(await this.props.api(page));
-        this.props.history.push(`/latest/page/${page}`);
+        this.props.history.push(`/${this.props.path}/page/${page}`);
     }
     nextPagesSet = async () => {
         
@@ -62,7 +62,7 @@ class Pagination extends React.Component {
                 disabledPrevSet:false,
             })
             this.props.handleData(await this.props.api(firstPost+1));
-            this.props.history.push(`/latest/page/${firstPost+1}`);
+            this.props.history.push(`/${this.props.path}/page/${firstPost+1}`);
         }
         else {
             this.setState({ disabledNextSet: true });
@@ -86,7 +86,7 @@ class Pagination extends React.Component {
                  disabledPrev:false,
                  })
             this.props.handleData(await this.props.api(page));
-            this.props.history.push(`/latest/page/${page}`);
+            this.props.history.push(`/${this.props.path}/page/${page}`);
             // window.location.reload(false)
         }
         else {
@@ -115,7 +115,7 @@ class Pagination extends React.Component {
                 currentPage:  this.state.currentPage - 1,
              })
             this.props.handleData(await this.props.api(page));
-            this.props.history.push(`/latest/page/${page}`);
+            this.props.history.push(`/${this.props.path}/page/${page}`);
             // window.location.reload(false)
         }
         else {
@@ -135,7 +135,7 @@ class Pagination extends React.Component {
 
             })
             this.props.handleData(await this.props.api(lastPost));
-            this.props.history.push(`/latest/page/${lastPost}`);
+            this.props.history.push(`/${this.props.path}/page/${lastPost}`);
         }
         else {
             this.setState({ disabledPrevSet: true });
