@@ -3,11 +3,12 @@ import Slider from "react-slick";
 import { tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png'
 import '../Carousel/carousel.css'
+import SliderItem from '../SliderItem/SliderItem'
 class Carousel extends React.Component {
     state = {
         popularMovies: null,
         tmdbData: null,
-        movieItems:[],
+        movieItems: [],
         updateState: true,
 
     }
@@ -26,7 +27,7 @@ class Carousel extends React.Component {
             let y = x.split("-")
             return (y[0])
         }
-        if (this.state.tmdbData ) {
+        if (this.state.tmdbData) {
             const movieItem = [];
             for (let i = 0; i < popularMovies.length; i++) {
                 movieItem.push({
@@ -37,18 +38,23 @@ class Carousel extends React.Component {
                 })
             }
             console.log(movieItem);
-            
+
             // this.setState({ movieItems: [...movieItem] });
             if (this.state.updateState) {
                 this.setState({ movieItems: [...movieItem] });
                 this.setState({ updateState: false })
                 console.log(movieItem);
-                
+
             }
 
+        }
+
+        
+    } 
+    handleClick = (data) => {
+        this.setState({ tmdbData: data, updateState: true })
     }
 
-}
     render() {
         const settings = {
             dots: true,
@@ -58,28 +64,26 @@ class Carousel extends React.Component {
             vertical: true,
             verticalSwiping: true,
             autoplay: true,
-            speed: 2000,
-            autoplaySpeed: 2000,
-            cssEase: "linear",
-            centerMode: true,
-
+            speed: 3000,
+            autoplaySpeed: 8000,
+            // cssEase: "linear",
+            // centerMode: true,
 
         };
-        
 
         return (
             <div className='carousel-container'>
-                <Slider {...settings}>
-                {this.state.movieItems && this.state.movieItems.map((item)=>{
 
-                    return(
-                       <div>
-                           <img className="carousel-poster" alt={item.title} src={item.poster}></img>
-                       </div> 
-                    )
+                <Slider {...settings}>
+                    {this.state.movieItems && this.state.movieItems.map(item => {
+                        console.log(item.title);
+
+                        return (
+                            <SliderItem className="carousel-item"  onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></SliderItem>
+                        )
                     })}
                 </Slider>
-            
+
             </div>
         )
     }

@@ -14,6 +14,8 @@
 .poster{
     width:200px;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
+
 }
 .movie-title{
     position: absolute;
@@ -45,24 +47,39 @@
 /* .movie-card-hover{
     display: none;
 } */
-.movie-card-hover {
-    display: none;
-}
+/* .movie-card-hover {
+} */
 
 .movie-card:hover .movie-card-hover {
     display: block;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+    
 }
 .movie-card-hover{
+    display: none;
     background-color: rgba(0, 0, 0, 0.863);
     width: 200px;
     height: 300px;
     position: absolute;
-    
     /* margin: 100px; */
     top: 0;
     left: 0;
+
     
 }
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+  
 .more-details{
     position: absolute;
     color: rgb(255, 242, 65);

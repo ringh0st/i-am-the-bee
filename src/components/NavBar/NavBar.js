@@ -10,15 +10,15 @@ const NavBar = () => {
                 <Link to={"/"} >
                     <img className="bee-icon" alt="icon" src={icon}></img>
                 </Link>
-                <ul className="linksContainer">
+                <div className="linksContainer">
                 <Link to={"/latest/page/1"} >
-                    <li>Latest Movies</li>
+                    <div className="link-item">Latest Movies</div>
                 </Link>
                 <Link to={"/top/page/1"} >
-                    <li>Top Movies</li>
+                    <div className="link-item">Top Movies</div>
                 </Link>
-                    <li></li>
-                </ul>
+                    {/* <li></li> */}
+                </div>
             </nav>
         </>
     )

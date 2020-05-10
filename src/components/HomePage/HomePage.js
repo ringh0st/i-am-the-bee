@@ -4,15 +4,14 @@ import NavBar from '../NavBar/NavBar'
 import Carousel from '../Carousel/Carousel'
 class HomePage extends React.Component {
 
-    render(){
-        
-        return(
-<>
+    render() {
 
-    <NavBar/>
-    <Carousel style={{height:"30vh"}}/>
+        return (
+            <>
+                <NavBar />
+                <Carousel />
 
-</>
+            </>
         )
     }
 

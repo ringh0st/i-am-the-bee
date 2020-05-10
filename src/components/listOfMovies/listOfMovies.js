@@ -96,7 +96,7 @@ class listOfMovies extends React.Component {
                     <div className="grid-container">
                         {this.state.movieItems && this.state.movieItems.map((item) => {
                             return (
-                                    <MovieCard className="grid-item"onClick={this.handleClick} tmdbId={item.tmdbId} key={item.id} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
+                                    <MovieCard className="grid-item" onClick={this.handleClick} tmdbId={item.tmdbId} key={item.id} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
                             );
                         })
                         }
