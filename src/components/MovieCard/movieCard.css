@@ -8,19 +8,20 @@
     position: relative;
     text-align: center;
     z-index: 0;
-    margin: 22px;
+    margin: 30px;
     
 }
 .poster{
     width:200px;
+    border-radius: 5px;
 }
 .movie-title{
     position: absolute;
     color: cornsilk;
-    background-color: rgba(128, 128, 128, 0.404);
+    /* background-color: rgba(128, 128, 128, 0.404); */
     bottom: 8px;  
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1rem;
     right: 4px;
     left:4px;
 }
@@ -28,7 +29,7 @@
     position: absolute;
     color: aliceblue;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1rem;
     top: 8px;  
     left:4px;
 }
@@ -37,7 +38,49 @@
     display: flex;
     color: #DCCC37;
     font-weight: 500;
-    font-size: 1.5rem;  
+    font-size: 1rem; 
     top: 8px;
-    right: 4px;
+    right: 5px;
 }
+/* .movie-card-hover{
+    display: none;
+} */
+.movie-card-hover {
+    display: none;
+}
+
+.movie-card:hover .movie-card-hover {
+    display: block;
+}
+.movie-card-hover{
+    background-color: rgba(0, 0, 0, 0.863);
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    
+    /* margin: 100px; */
+    top: 0;
+    left: 0;
+    
+}
+.more-details{
+    position: absolute;
+    color: rgb(255, 242, 65);
+    font-weight: 500;
+    font-size: 1.5rem;
+    bottom: 150px;  
+    left: 4px;
+    right:4px;
+}
+
+
+
+.fa-chevron-circle-right {
+    animation: blinker 1.3s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

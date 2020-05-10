@@ -1,5 +1,14 @@
 
-.navbar{
-    height: 30px;
+.navbars{
+    height: 80px;
     background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-evenly;
+}
+.linksContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    width: 250px;
 }

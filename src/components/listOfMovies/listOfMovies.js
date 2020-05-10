@@ -4,7 +4,8 @@ import {tmdbLatestMovies, tmdbTopMovies} from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png';
 import MovieCard from '../MovieCard/MovieCard'
 import Pagination from '../Pagination/Pagination';
-import NavBar from '../NavBar/NavBar'
+import NavBar from '../NavBar/NavBar';
+
 
 class listOfMovies extends React.Component {
 
@@ -17,7 +18,7 @@ class listOfMovies extends React.Component {
         disabledNext: false,
         updateState: true,
         buttonsForPagination: null,
-        path:null
+        path:null,
     };
 
 
@@ -30,20 +31,18 @@ class listOfMovies extends React.Component {
                 tmdbData: await tmdbLatestMovies(1),
                 path:"latest"
              });
-        }else{
+        } else {
             this.setState({ 
                 tmdbData: await tmdbTopMovies(1),
-                path:"top" });
-            console.log("j");
-            
+                path:"top"
+             })
+            // console.log("j"); 
+
         }
         function detectMob() {
             // console.log(window.innerHeight);
             return ((window.innerWidth <= 800) && (window.innerHeight <= 600));
         }
-        
-        
-        
         if (detectMob() === false) {
             // console.log("this is a computer screen");
             return this.setState({ buttonsForPagination: 5 })
@@ -56,11 +55,13 @@ class listOfMovies extends React.Component {
     componentDidUpdate() {
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
         let moviesArray = this.state.tmdbData.results;
+        // console.log(moviesArray);
+        
         let years = (x) => {
             let y = x.split("-")
             return (y[0])
         }
-        if (this.state.tmdbData) {
+        if (this.state.tmdbData ) {
             const movieItem = [];
             for (let i = 0; i < moviesArray.length; i++) {
                 movieItem.push({
@@ -86,23 +87,20 @@ class listOfMovies extends React.Component {
     }
 
     render() {
-
         // const styleButton = {
         //     padding:props.padding
         // }
         return (
             <>
-
                 <NavBar/>
-                <div className="now-playing">
-                    {/* {this.state.movcieItems && <DisplayMovies data=></DisplayMovies>} */}
-                    {this.state.movieItems && this.state.movieItems.map((item, key) => {
-                        return (
-                            <MovieCard onClick={this.handleClick} tmdbId={item.tmdbId} key={key} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
-                        );
-                    })
-                    }
-                </div>
+                    <div className="grid-container">
+                        {this.state.movieItems && this.state.movieItems.map((item) => {
+                            return (
+                                    <MovieCard className="grid-item"onClick={this.handleClick} tmdbId={item.tmdbId} key={item.id} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
+                            );
+                        })
+                        }
+                    </div>
                 {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatestMovies} handleData={this.handleClick} buttonsForPagination={this.buttonsForPagination} />}
             </>
         )

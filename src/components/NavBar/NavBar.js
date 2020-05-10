@@ -6,11 +6,11 @@ const NavBar = () => {
 
     return(
         <>
-            <nav className="navbar">
+            <nav className="navbars">
                 <Link to={"/"} >
                     <img className="bee-icon" alt="icon" src={icon}></img>
                 </Link>
-                <ul>
+                <ul className="linksContainer">
                 <Link to={"/latest/page/1"} >
                     <li>Latest Movies</li>
                 </Link>
