@@ -1,24 +1,36 @@
 
 .navbars{
-    height: 80px;
-    /* background-color: blanchedalmond; */
-    /* display: flex; */
-    /* justify-content: space-evenly; */
-
-    /* position: absolute; */
-    /* z-index: 1; */
-    left: 100px;
-    right: 100px;
-    /* align-items: center; */
+    height: 50px;
+    background-color:#2E2E2E; 
+    display: flex;
+    justify-content: space-evenly; 
+    position: absolute; 
+    z-index: 1;
+    border: 1px solid black;
+    /* left: 100px;
+    right: 100px; */
+    width: 100vw;
+    align-items: center;
 }
 .linksContainer{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-between;
+    align-items: center;
+     */
     /* color: rgb(165, 69, 69); */
 }
-
+.bee-icon{
+    width:36px ;
+}
 .link-item{
     text-decoration: none;
+    color: rgb(255, 242, 65);
+    /* left: 20px; */
+    /* right: 20px; */
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 1.5rem;
+    /* border: cadetblue 1px solid; */
 } 
 /* .link-item:visited {
     text-decoration: none;

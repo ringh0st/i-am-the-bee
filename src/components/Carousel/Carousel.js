@@ -10,6 +10,7 @@ class Carousel extends React.Component {
         tmdbData: null,
         movieItems: [],
         updateState: true,
+        randomArray:null,
 
     }
 
@@ -19,7 +20,7 @@ class Carousel extends React.Component {
         });
     }
     componentDidUpdate() {
-        let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
+        let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/original/${x}` : noPoster;
         let popularMovies = this.state.tmdbData.results;
         console.log(popularMovies);
 
@@ -37,13 +38,20 @@ class Carousel extends React.Component {
                     year: years(popularMovies[i].release_date),
                 })
             }
-            console.log(movieItem);
+            let randomArray = [];
+            for (let i = 0; i < 5; i++) {
+                randomArray[i]=movieItem[Math.floor(Math.random()*movieItem.length)]
+            }
+            console.log(randomArray);
 
             // this.setState({ movieItems: [...movieItem] });
             if (this.state.updateState) {
                 this.setState({ movieItems: [...movieItem] });
+                this.setState({randomArray:[...randomArray]})
                 this.setState({ updateState: false })
                 console.log(movieItem);
+                console.log(randomArray);
+                
 
             }
 
@@ -54,8 +62,10 @@ class Carousel extends React.Component {
     handleClick = (data) => {
         this.setState({ tmdbData: data, updateState: true })
     }
-
+    
     render() {
+
+
         const settings = {
             dots: true,
             infinite: true,
@@ -65,17 +75,38 @@ class Carousel extends React.Component {
             verticalSwiping: true,
             autoplay: true,
             speed: 3000,
-            autoplaySpeed: 8000,
+            autoplaySpeed: 7000,
             // cssEase: "linear",
             // centerMode: true,
+            // responsive: [
+            //     {
+            //       breakpoint: 1200,
+            //       settings: {
+            //         slidesToShow: 1,
+            //         slidesToScroll: 1
+            //       }
+            //     },
+            //     {
+            //       breakpoint: 1008,
+            //       settings: {
+            //         slidesToShow: 1,
+            //         slidesToScroll: 1
+            //       }
+            //     },
+            //     {
+            //       breakpoint: 800,
+            //       settings: "unslick"
+            //     }
 
+            //   ]
         };
+        
 
         return (
             <div className='carousel-container'>
 
-                <Slider {...settings}>
-                    {this.state.movieItems && this.state.movieItems.map(item => {
+                <Slider {...settings} >
+                    {this.state.randomArray && this.state.randomArray.map(item => {
                         console.log(item.title);
 
                         return (

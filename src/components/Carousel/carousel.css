@@ -1,34 +1,56 @@
 .carousel-container{
     /* height: 100px; */
     /* background-color: blanchedalmond; */
-    padding-left: 200px;
-    padding-right: 200px;
+    /* padding-left: 200px;
+    padding-right: 200px; */
+    padding-top: 0;
     position: relative;
     
 }
 .slider-container{
     display: flex;
     position: relative;
+    
 }
-/* .slider-img{
-    position: relative;
-} */
-
-.slider-title{
-    color: rgb(255, 255, 255);
-    font-size: 4rem;
+.slider-img{
+    width: 100vw;
+    /* height: 50vh; */
+}
+.slider-details{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     position: absolute;
     left: 20px;
-    top: 20px;
+    bottom: 50px;
+    padding: 2rem;
+
+}
+.slider-title{
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    /* left: 20px;
+    top: 20px; */
     z-index: 1;
+    text-transform: uppercase;
+    font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 .slider-year{
     color: rgb(255, 255, 255);
     font-size: 4rem;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    /* position: absolute; */
+    /* right: 20px;
+    top: 20px; */
     z-index: 1;
+    font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+}
+.slider-more{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family:"Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }

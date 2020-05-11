@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../NavBar/NavBar'
 // import Slider from 'react-slick';
 import Carousel from '../Carousel/Carousel'
+import ListOfMovies from '../listOfMovies/listOfMovies'
 class HomePage extends React.Component {
 
     render() {
@@ -10,7 +11,6 @@ class HomePage extends React.Component {
             <>
                 <NavBar />
                 <Carousel />
-
             </>
         )
     }
