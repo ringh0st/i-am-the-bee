@@ -16,7 +16,7 @@ class Carousel extends React.Component {
 
     async componentDidMount() {
         this.setState({
-            tmdbData: await tmdbGreatMovies(1),
+            tmdbData: await tmdbGreatMovies(2),
         });
     }
     componentDidUpdate() {
@@ -36,6 +36,7 @@ class Carousel extends React.Component {
                     poster: posterFunction(popularMovies[i].backdrop_path),
                     tmdbRating: popularMovies[i].vote_average,
                     year: years(popularMovies[i].release_date),
+                    tmdbId: popularMovies[i].id
                 })
             }
             let randomArray = [];
@@ -76,29 +77,6 @@ class Carousel extends React.Component {
             autoplay: true,
             speed: 3000,
             autoplaySpeed: 7000,
-            // cssEase: "linear",
-            // centerMode: true,
-            // responsive: [
-            //     {
-            //       breakpoint: 1200,
-            //       settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1
-            //       }
-            //     },
-            //     {
-            //       breakpoint: 1008,
-            //       settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1
-            //       }
-            //     },
-            //     {
-            //       breakpoint: 800,
-            //       settings: "unslick"
-            //     }
-
-            //   ]
         };
         
 
@@ -110,7 +88,7 @@ class Carousel extends React.Component {
                         console.log(item.title);
 
                         return (
-                            <SliderItem className="carousel-item"  onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></SliderItem>
+                            <SliderItem className="carousel-item" tmdbId={item.tmdbId} onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></SliderItem>
                         )
                     })}
                 </Slider>

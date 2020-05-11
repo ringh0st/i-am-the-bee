@@ -28,29 +28,40 @@
 }
 .slider-title{
     color: rgb(255, 255, 255);
-    font-size: 5rem;
+    font-size: 4rem;
     /* left: 20px;
     top: 20px; */
     z-index: 1;
     text-transform: uppercase;
-    font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial;
+    font-weight: 800;
+    text-shadow: 4px 3px 0px #7A7A7A;
+
 
 }
 .slider-year{
     color: rgb(255, 255, 255);
-    font-size: 4rem;
+    font-size: 3rem;
     /* position: absolute; */
     /* right: 20px;
     top: 20px; */
     z-index: 1;
+    font-weight: 800;
+    text-shadow: 4px 3px 0px #7A7A7A;
     font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 }
 .slider-more{
+    
     text-decoration: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    padding: 15px;
+    background-color: rgb(61, 61, 61);
+    width: fit-content;
+    border-radius: 5%;
     font-family:"Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }

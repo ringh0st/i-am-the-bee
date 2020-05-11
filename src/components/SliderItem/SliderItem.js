@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
+console.log(tmdbId);
 
     return (
         <container className='slider-container'>
@@ -9,9 +10,8 @@ const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
 
                 <div className="slider-title" >{title}</div>
                 <div className="slider-year">{year}</div>
-                <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
-
-                    <div className="slider-more">More Details.. &ensp;
+                <Link  className="slider-more"onClick={handleClick} to={"/moviedetails/" + tmdbId} >
+                    <div >More ..     &ensp;
                     <i className="fa fa-chevron-circle-right"></i>
                     </div>
                 </Link>
