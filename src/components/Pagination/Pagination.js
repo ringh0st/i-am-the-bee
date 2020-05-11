@@ -156,8 +156,8 @@ class Pagination extends React.Component {
                 
                 <button onClick={this.prevPagesSet}disabled={this.state.disabledPrevSet}  style={{ fontSize: '20px' }}><i className="fa fa-fast-backward"></i></button>
                 <button  className="prev"  onClick={this.prevPage}  disabled={this.state.disabledPrev}><i className="fa fa-step-backward"></i></button>
-                    {this.state.currentPosts && this.state.currentPosts.map((num, key) => {
-                        return (<button href="#"  className={(this.state.currentPage === num ? 'active ' : '') + 'page-number'} id={num} key={key} onClick={this.pageNum}>{num}</button>)
+                    {this.state.currentPosts && this.state.currentPosts.map((num) => {
+                        return (<button href="#"  className={(this.state.currentPage === num ? 'active ' : '') + 'page-number'} id={num} key={num} onClick={this.pageNum}>{num}</button>)
                     })}
                 <button className="next" onClick={this.nextPage} disabled={this.state.disabledNext} ><i className="fa fa-step-forward"></i></button>
                 <button  onClick={this.nextPagesSet}disabled={this.state.disabledNextSet} style={{ fontSize: '20px' }}><i className="fa fa-fast-forward"></i></button>

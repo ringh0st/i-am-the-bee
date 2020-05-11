@@ -4,9 +4,8 @@ import { tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png'
 import '../Carousel/carousel.css'
 import SliderItem from '../SliderItem/SliderItem'
-// import CarouselData from '../CarouselData/CarouselData'
-
-class Carousel extends React.Component {
+import Carousel from '../Carousel/Carousel'
+class CarouselData extends React.Component {
     state = {
         popularMovies: null,
         tmdbData: null,
@@ -17,15 +16,14 @@ class Carousel extends React.Component {
     }
 
     async componentDidMount() {
-        
         this.setState({
             tmdbData: await tmdbGreatMovies(2),
         });
-        
     }
     componentDidUpdate() {
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/original/${x}` : noPoster;
         let popularMovies = this.state.tmdbData.results;
+        console.log(popularMovies);
 
         let years = (x) => {
             let y = x.split("-")
@@ -45,14 +43,15 @@ class Carousel extends React.Component {
             for (let i = 0; i < 5; i++) {
                 randomArray[i]=movieItem[Math.floor(Math.random()*movieItem.length)]
             }
-            // console.log(randomArray);
+            console.log(randomArray);
 
             // this.setState({ movieItems: [...movieItem] });
             if (this.state.updateState) {
                 this.setState({ movieItems: [...movieItem] });
                 this.setState({randomArray:[...randomArray]})
                 this.setState({ updateState: false })
-
+                console.log(movieItem);
+                console.log(randomArray);
                 
 
             }
@@ -67,33 +66,9 @@ class Carousel extends React.Component {
     
     render() {
 
-
-        const settings = {
-            dots: true,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            vertical: true,
-            verticalSwiping: true,
-            autoplay: true,
-            speed: 3000,
-            autoplaySpeed: 7000,
-        };
-
-
         return (
-            <div className='carousel-container'>
-
-                <Slider {...settings} >
-                    {this.state.randomArray && this.state.randomArray.map(item => {
-                        return (
-                            <SliderItem className="carousel-item" key={item.id}tmdbId={item.tmdbId} onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></SliderItem>
-                        )
-                    })}
-                </Slider>
-
-            </div>
+            <Carousel moviesarray={this.state.randomArray} onClick={this.handleClick}> </Carousel>
         )
     }
 }
-export default Carousel;
+export default CarouselData;

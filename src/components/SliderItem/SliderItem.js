@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
-console.log(tmdbId);
 
     return (
-        <container className='slider-container'>
+        <div className='slider-container'>
             <div className='slider-details'>
 
                 <div className="slider-title" >{title}</div>
@@ -18,7 +17,7 @@ console.log(tmdbId);
             </div>
 
             <img className='slider-img' alt={title} src={poster}></img>
-        </container>
+        </div>
     )
 }
 export default SliderItem

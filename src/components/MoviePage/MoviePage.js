@@ -7,6 +7,7 @@ import BackButton from '../BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 
 
+
 const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieCast}) => {
     const opts = {
         height: '240',
@@ -32,7 +33,8 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
                 </Link>
                 </nav>
                 <div style={sectionStyle}className="header">
-                    <img className="poster" alt={title} src={movie.poster}></img>
+                    {/* <div className="poster-container"><img className="poster-item" alt={title} src={movie.poster}></img></div> */}
+                    
                     <div className="movie-main-info">
 
                         <div className="title">{movie.title}</div>
@@ -61,10 +63,10 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
                         </div>
                         CAST: <br/>
                     <div className="cast">
-                    {movieCast && movieCast.map((item, key) => {
+                    {movieCast && movieCast.map((item) => {
                         return (
-                            <div className="actor" key={key}>
-                        <img className="actor-pic"alt={key} src={item.poster}></img>
+                            <div className="actor" key={item.id}>
+                        <img className="actor-pic"alt={item.id} src={item.poster}></img>
                         <div className="actor-name">{item.name}</div>
                         <div className="character">{item.character}</div>
                         </div>
