@@ -93,6 +93,8 @@ class listOfMovies extends React.Component {
         return (
             <>
                 <NavBar/>
+                {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatestMovies} handleData={this.handleClick} buttonsForPagination={this.buttonsForPagination} />}
+
                     <div className="grid-container">
                         {this.state.movieItems && this.state.movieItems.map((item) => {
                             return (
@@ -101,7 +103,6 @@ class listOfMovies extends React.Component {
                         })
                         }
                     </div>
-                {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatestMovies} handleData={this.handleClick} buttonsForPagination={this.buttonsForPagination} />}
             </>
         )
     }

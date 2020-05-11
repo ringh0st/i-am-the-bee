@@ -34,7 +34,6 @@ class Carousel extends React.Component {
                 movieItem.push({
                     title: popularMovies[i].title,
                     poster: posterFunction(popularMovies[i].backdrop_path),
-                    tmdbRating: popularMovies[i].vote_average,
                     year: years(popularMovies[i].release_date),
                     tmdbId: popularMovies[i].id
                 })
