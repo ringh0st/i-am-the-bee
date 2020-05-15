@@ -6,7 +6,7 @@ export const SearchButtonStyle = createGlobalStyle`
   ${Normalize}
   .search-form {
     width:16vw;
-    border-radius: 9999px;
+    border-radius: var(--border-radius);
     background: black;
     // opacity:0.5;
     padding-left: 1.5rem;

@@ -37,10 +37,9 @@ export const NavBarStyle = createGlobalStyle`
     font-size: 1.2rem;
     opacity:0.8;
     text-transform: uppercase;
-    // border: 1px solid var(--primary-color);
     padding: 10px;
     background: var(--background-color);
-    border-radius: 9999px;
+    border-radius: var(--border-radius);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-family: 'Righteous',cursive;
