@@ -1,11 +1,13 @@
+import { createGlobalStyle } from "styled-components";
+import { Normalize } from 'styled-normalize'
+
+
+export const CarouselStyle = createGlobalStyle`
+  ${Normalize} 
+
+
 .carousel-container{
-    /* height: 100px; */
-    /* background-color: blanchedalmond; */
-    /* padding-left: 200px;
-    padding-right: 200px; */
-    /* padding-top: 0; */
     position: relative;
-    /* height: 50vh; */
 
 }
 .slider-container{
@@ -22,13 +24,12 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    /* position: absolute; */
     left: 20px;
     bottom: 40px;
     padding: 4rem;
     background-color: rgb(221, 204, 55);
     width:30vw;
-    background: linear-gradient(135deg, rgb(0, 0, 0) 0, rgba(92, 88, 88, 0) 40%, rgba(221, 204, 55, 0) 40%,rgba(58,58,58,0) 59%, rgba(58,58,58,0) 59%, rgba(63,63,63,0) 100%), linear-gradient(135deg, rgba(62, 62, 60, 0.55) 0, rgba(0, 0, 0, 0) 7%, rgba(79,79,79,0) 7%, rgba(63,63,63,0) 100%), linear-gradient(315deg, rgba(0, 0, 0, 0.78) 0, rgba(148, 140, 140, 0.41) 7%, rgba(79,79,79,0) 7%, rgba(110, 110, 110, 0) 100%), rgba(221, 204, 55, 0.79);
+    background: linear-gradient(135deg, rgb(0, 0, 0) 0, rgba(92, 88, 88, 0) 40%, rgba(221, 204, 55, 0) 40%,rgba(58,58,58,0) 59%, rgba(58,58,58,0) 59%, rgba(63,63,63,0) 100%), linear-gradient(135deg, rgba(62, 62, 60, 0.55) 0, rgba(0, 0, 0, 0) 7%, rgba(79,79,79,0) 7%, rgba(63,63,63,0) 100%), linear-gradient(315deg, rgba(0, 0, 0, 0.78) 0, rgba(148, 140, 140, 0.41) 7%, rgba(79,79,79,0) 7%, rgba(110, 110, 110, 0) 100%), rgba(253, 218, 40    , 0.79);
 
     
 }
@@ -39,9 +40,15 @@
     top: 20px; */
     z-index: 1;
     text-transform: uppercase;
-    font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial;
-    font-weight: 800;
+    /* font-family: 'Righteous', cursive; */
+    /* font-family: 'Monoton', cursive; */
+        /* font-family: "Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial; */
+        /* font-family: 'Righteous', cursive; */
+/* font-family: 'Syncopate', sans-serif; */
+    /* font-weight: 800; */
     /* text-shadow: 4px 3px 0px #7A7A7A; */
+    font-family: 'Fredericka the Great', cursive;
+
 
 
 }
@@ -71,3 +78,4 @@
     font-family:"Gotham A", "Gotham B", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
+`

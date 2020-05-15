@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {GlobalStyle} from '../src/GlobalStyle.styles'
 
+
+const Root = () => (
+  <React.Fragment>
+    <GlobalStyle />
+    <App />
+  </React.Fragment>
+) 
 
 ReactDOM.render(
-    <App />,
+  <Root />,
   document.getElementById('root')
 );
 

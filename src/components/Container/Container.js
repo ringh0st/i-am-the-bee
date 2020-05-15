@@ -4,7 +4,7 @@ import MovieDetails from '../movieDetails/MovieDetails';
 import HomePage from '../HomePage/HomePage';
 // import TopMovies from '../TopMovies/TopMovies';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+// import SearchPage from '../SearchPage/SearchPage'
 
 
 class Container extends React.Component {
@@ -17,6 +17,7 @@ class Container extends React.Component {
                 <Route path="/latest/page/:id" exact component={listOfMovies} />
                 <Route path="/top/page/:id" component={listOfMovies} />
                 <Route path="/moviedetails/:id" component={MovieDetails} />
+                {/* <Route path="/search/:movie" component={SearchPage} /> */}
             </BrowserRouter>
         )
     }

@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import '../Pagination/pagination.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
-
+// import SearchButton from '../SearchButton/SearchButton'
 // let buttonsForPagination = 10
 
 class Pagination extends React.Component {
@@ -153,7 +153,7 @@ class Pagination extends React.Component {
         return (
             
             <><div className="pagination">
-                
+                {/* <SearchButton></SearchButton> */}
                 <button onClick={this.prevPagesSet}disabled={this.state.disabledPrevSet}  style={{ fontSize: '20px' }}><i className="fa fa-fast-backward"></i></button>
                 <button  className="prev"  onClick={this.prevPage}  disabled={this.state.disabledPrev}><i className="fa fa-step-backward"></i></button>
                     {this.state.currentPosts && this.state.currentPosts.map((num) => {

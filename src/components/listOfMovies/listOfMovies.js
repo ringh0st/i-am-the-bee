@@ -5,7 +5,7 @@ import noPoster from '../../images/no-poster-available.png';
 import MovieCard from '../MovieCard/MovieCard'
 import Pagination from '../Pagination/Pagination';
 import NavBar from '../NavBar/NavBar';
-
+// import Carousel from '../Carousel/Carousel'
 
 class listOfMovies extends React.Component {
 
@@ -93,6 +93,8 @@ class listOfMovies extends React.Component {
         return (
             <>
                 <NavBar/>
+                {/* <Carousel /> */}
+
                 {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatestMovies} handleData={this.handleClick} buttonsForPagination={this.buttonsForPagination} />}
 
                     <div className="grid-container">

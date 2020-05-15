@@ -3,6 +3,8 @@
 } */
 .pagination {
     text-align: center;
+    padding-top: 80px;
+
 }
 .pagination button {
     font-family: 'Times New Roman', Times, serif;
@@ -10,8 +12,7 @@
     font-size: 1.2rem;
     padding: 12px;
     width: 3rem;
-    /* background-color: #DCCC37; */
-    border: 1px solid #DCCC37 ;
+    border: 1px solid var(--primary-color) ;
     text-decoration: none;
     /* transition: 0.4s; */
     outline: none;
@@ -23,9 +24,9 @@
 }
 .pagination .page-number:hover {
     /* color: rgb(5, 3, 3); */
-    background-color: #DCCC37;
-    width: 3.1rem;
-    height: 3.1rem;
+    background-color: var(--primary-color);
+    /* width: 3.1rem;
+    height: 3.1rem; */
     box-shadow: none;
 }
 

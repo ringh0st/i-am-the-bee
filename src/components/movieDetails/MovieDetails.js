@@ -5,7 +5,7 @@ import noPoster from '../../images/no-poster-available.png';
 import comingSoon from '../../images/comingsoon.jpg';
 import noProfilePic from '../../images/noProfilepic.jpeg';
 import {fetchMovieById, fetchMovieTrailer, fetchPeoplesId} from '../../apis/tmdb';
-
+import NavBar from '../NavBar/NavBar'
 class MovieDetails extends React.Component {
 
     state = {
@@ -98,6 +98,7 @@ class MovieDetails extends React.Component {
         const { isLoading } = this.state;
         return (
             <>
+                <NavBar/>
                 {isLoading && spinner()}
                 <MoviePage imdbId={this.state.imdbId} movie={this.state.movie} movieCast={this.state.movieCast} />
 

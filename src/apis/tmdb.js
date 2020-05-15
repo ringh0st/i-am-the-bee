@@ -30,3 +30,7 @@ export const fetchPeoplesId = async (id)=> {
   const response = await tmdb.get(`movie/${id}/credits?api_key=${apiKey}&language=en-US`);
   return response.data;
 }
+export const searchMovieName = async (searchTerm)=>{
+  const response = await tmdb.get(`search/movie?api_key=${apiKey}&language=en-US&query=${searchTerm}&page=1&include_adult=false`);
+  return response.data
+}
