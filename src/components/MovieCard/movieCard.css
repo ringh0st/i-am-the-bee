@@ -1,4 +1,6 @@
-
+*{
+    font-family: var(--primary-font);
+}
 .now-playing{
     display: flex;
     justify-content: space-between;

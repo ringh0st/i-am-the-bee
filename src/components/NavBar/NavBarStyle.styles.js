@@ -5,6 +5,7 @@ import { Normalize } from 'styled-normalize'
 export const NavBarStyle = createGlobalStyle`
   ${Normalize} 
 .navbars{
+    
     height: 80px;
     display: flex;
     justify-content: space-between; 

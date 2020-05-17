@@ -50,8 +50,6 @@ class CarouselData extends React.Component {
                 this.setState({ movieItems: [...movieItem] });
                 this.setState({randomArray:[...randomArray]})
                 this.setState({ updateState: false })
-                console.log(movieItem);
-                console.log(randomArray);
                 
 
             }

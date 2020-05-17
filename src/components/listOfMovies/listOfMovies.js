@@ -55,6 +55,8 @@ class listOfMovies extends React.Component {
     componentDidUpdate() {
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
         let moviesArray = this.state.tmdbData.results;
+        console.log(moviesArray);
+        
         // console.log(moviesArray);
         
         let years = (x) => {

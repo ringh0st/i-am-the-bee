@@ -1,11 +1,11 @@
 
 .container{
 /* height: 100vh; */
+padding-top: 70px;
 /* background-color: blueviolet; */
 /* border: brown 1px solid; */
 /* background-color: rgb(0, 0, 0); */
 /* margin: 20px; */
-padding: 20px;
 }
 .header{
     /* width: 100%; */

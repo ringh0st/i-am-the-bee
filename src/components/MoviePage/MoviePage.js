@@ -1,8 +1,8 @@
 import React from "react";
 import "../MoviePage/moviePage.css";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import icon from '../../images/beeandtextlogo.png';
+// import icon from '../../images/beeandtextlogo.png';
 import BackButton from '../BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 
@@ -26,12 +26,6 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie , movieC
     return (
         <>
             <div className="container">
-                <nav className="navbar">
-                <Link to={"/latest/page/1"} >
-                    <img  className="bee-icon" alt="icon" src={icon}></img>
-                    {/* <div className="home-button">Home</div> */}
-                </Link>
-                </nav>
                 <div style={sectionStyle}className="header">
                     {/* <div className="poster-container"><img className="poster-item" alt={title} src={movie.poster}></img></div> */}
                     

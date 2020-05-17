@@ -8,5 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     background-color: var(--background-color);
     min-height:100vh;
+    font-size:62.5%;
+
   }
 `

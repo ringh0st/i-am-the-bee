@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import MovieReviews from '../MovieReviews/MovieReviews'
 
 const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
 
@@ -17,6 +18,7 @@ const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
             </div>
 
             <img className='slider-img' alt={title} src={poster}></img>
+
         </div>
     )
 }

@@ -31,13 +31,13 @@ class SearchButton extends React.Component {
             <>
             <SearchButtonStyle/>
             <div className="search-form">
+            <span value={this.state.searchTerm} ><i className="fa fa-search"></i></span>
                 <input 
                 className="search-button"
                 placeholder="Search for..."     
                 value={this.state.searchTerm}
                 onChange={this.updateSearch.bind(this)}
                 />
-                <span value={this.state.searchTerm} ><i class="fa fa-search"></i></span>
         </div>
         </>
         )

@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png'
 import { CarouselStyle } from './CarouselStyle.styles.js';
-import SliderItem from '../SliderItem/SliderItem'
+import SliderItem from '../SliderItem/SliderItem';
 // import CarouselData from '../CarouselData/CarouselData'
 
 class Carousel extends React.Component {
@@ -17,7 +17,7 @@ class Carousel extends React.Component {
     }
 
     async componentDidMount() {
-        
+
         this.setState({
             tmdbData: await tmdbGreatMovies(2),
         });
@@ -51,15 +51,14 @@ class Carousel extends React.Component {
             if (this.state.updateState) {
                 this.setState({ movieItems: [...movieItem] });
                 this.setState({randomArray:[...randomArray]})
-                this.setState({ updateState: false })
-
-                
+                this.setState({ updateState: false })                
 
             }
 
         }
 
-        
+        console.log(popularMovies);
+
     } 
     handleClick = (data) => {
         this.setState({ tmdbData: data, updateState: true })

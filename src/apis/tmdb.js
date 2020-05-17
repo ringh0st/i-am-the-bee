@@ -34,3 +34,8 @@ export const searchMovieName = async (searchTerm)=>{
   const response = await tmdb.get(`search/movie?api_key=${apiKey}&language=en-US&query=${searchTerm}&page=1&include_adult=false`);
   return response.data
 }
+
+export const movieReviews = async (id) => {
+  const response = await tmdb.get(`movie/${id}/reviews?api_key=${apiKey}&language=en-US&page=1`)
+  return response.data
+}

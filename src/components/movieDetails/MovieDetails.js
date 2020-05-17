@@ -4,8 +4,9 @@ import MoviePage from '../MoviePage/MoviePage';
 import noPoster from '../../images/no-poster-available.png';
 import comingSoon from '../../images/comingsoon.jpg';
 import noProfilePic from '../../images/noProfilepic.jpeg';
-import {fetchMovieById, fetchMovieTrailer, fetchPeoplesId} from '../../apis/tmdb';
-import NavBar from '../NavBar/NavBar'
+import {fetchMovieById, fetchMovieTrailer, fetchPeoplesId,movieReviews} from '../../apis/tmdb';
+import NavBar from '../NavBar/NavBar';
+// import MovieReviews from '../MovieReviews/MovieReviews';
 class MovieDetails extends React.Component {
 
     state = {
@@ -15,8 +16,9 @@ class MovieDetails extends React.Component {
         isLoading: false,
         fetchMovieById: null,
         fetchMovieTrailer:null,
-        fetchPeoplesId:null
-
+        fetchPeoplesId:null,
+        movieReviews:null,
+        reviewlist:null
     };
     async componentDidMount() {
         const { id } = this.props.match.params
@@ -26,7 +28,8 @@ class MovieDetails extends React.Component {
         
         this.setState({ 
             fetchMovieById: await fetchMovieById(id),
-            fetchPeoplesId: await fetchPeoplesId(id)
+            fetchPeoplesId: await fetchPeoplesId(id),
+            movieReviews: await movieReviews(id)
         });
     
         const omdb_key = "bc901512";
@@ -53,6 +56,19 @@ class MovieDetails extends React.Component {
         }
 
         this.setState({ movieCast: [...movieCast] });
+
+        let reviewlist = this.state.movieReviews.results
+        let review = [];
+        for (let i=0; i < reviewlist.length; i ++){
+            review.push({
+                author:reviewlist[i].author,
+                content:reviewlist[i].content,
+
+            })
+        }
+        
+        this.setState({ reviewlist: [...reviewlist] });
+
         let years = (x) => {
             let y = x.split("-")
             return (y[0])
@@ -82,7 +98,8 @@ class MovieDetails extends React.Component {
         }
         this.setState({ movie: movie, isLoading: false })
 
-
+        console.log(this.state.movieReviews);
+        
     }
     render() {
         const spinner = () => {
@@ -101,7 +118,7 @@ class MovieDetails extends React.Component {
                 <NavBar/>
                 {isLoading && spinner()}
                 <MoviePage imdbId={this.state.imdbId} movie={this.state.movie} movieCast={this.state.movieCast} />
-
+                {/* <MovieReviews reviewlist={this.state.reviewlist} /> */}
             </>
         )
     }

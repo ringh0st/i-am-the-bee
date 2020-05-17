@@ -11,9 +11,14 @@
     --heading-primary: 3.5rem;
     --heading-secondary: 2.3rem;
     --heading-tertiary: 1.8rem;
+    --buttons-primary:1.7rem;
     --paragraph: 1.6rem;
     --border-radius:9999px;
     --primary-font:'Righteous', cursive;
+    /* background-image: url('../images/back4.jpg'); */
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
   }
       /* font-family: 'Righteous', cursive; */
     /* font-family: 'Monoton', cursive; */
