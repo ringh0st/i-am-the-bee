@@ -1,12 +1,15 @@
 
 import React from 'react';
-import {SearchButtonStyle} from '../SearchButton/SearchButtonStyle.Styles'
+import CustomButton from '../CostomButton/CustomButton';
+import {SearchContainer} from '../SearchButton/SearchButtonStyle.Styles'
+import Input from '../Input/Input';
 
 class SearchButton extends React.Component {
     state={
         // search:'Level Up',
         tmdbData: null,
-        searchTerm:""
+        searchTerm:"",
+        placeholder:"Search for.."
 
     }
     // async componentDidMount() { 
@@ -16,11 +19,13 @@ class SearchButton extends React.Component {
     //     console.log(tmdbData);
         
     // }
+    
     updateSearch=(e)=>{
         this.setState({searchTerm:e.target.value})
-        console.log(this.state.searchTerm);
+        console.log(e.target.value);
     
     }
+
     render(){
         // let findMovie= this.props.movies.filter(
         //    movie =>{
@@ -29,16 +34,15 @@ class SearchButton extends React.Component {
         // )
         return(
             <>
-            <SearchButtonStyle/>
-            <div className="search-form">
-            <span value={this.state.searchTerm} ><i className="fa fa-search"></i></span>
-                <input 
-                className="search-button"
-                placeholder="Search for..."     
-                value={this.state.searchTerm}
-                onChange={this.updateSearch.bind(this)}
-                />
-        </div>
+            <SearchContainer primary>
+                <CustomButton value={this.state.searchTerm} ></CustomButton>
+                    <Input 
+                    placeholder={this.state.placeholder}    
+                    value={this.state.searchTerm}
+                    updateSearch={this.updateSearch}
+                    />
+            </SearchContainer>
+            
         </>
         )
     }
