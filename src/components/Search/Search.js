@@ -1,12 +1,12 @@
 
 import React from 'react';
 import CustomButton from '../CostomButton/CustomButton';
-import { SearchContainer } from '../SearchButton/SearchButtonStyle.Styles'
+import { SearchContainer } from '../Search/SearchStyle.Styles'
 import Input from '../Input/Input';
 import { searchMovieName } from '../../apis/tmdb';
 import MovieCard from '../MovieCard/MovieCard';
 
-class SearchButton extends React.Component {
+class Search extends React.Component {
     state = {
         // search:'Level Up',
         tmdbData: null,
@@ -69,4 +69,4 @@ class SearchButton extends React.Component {
     }
 }
 
-export default SearchButton
+export default Search

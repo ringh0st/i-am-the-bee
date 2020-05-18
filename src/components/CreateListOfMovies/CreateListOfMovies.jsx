@@ -9,7 +9,7 @@ import NavBar from '../NavBar/NavBar';
 import ListOfMovies from '../ListOfMovies/ListOfMovies'
 // import Carousel from '../Carousel/Carousel'
 
-class listOfMovies extends React.Component {
+class CreateListOfMovies extends React.Component {
 
     state = {
         tmdbData: null,
@@ -117,5 +117,5 @@ class listOfMovies extends React.Component {
         )
     }
 }
-export default withRouter(listOfMovies);
+export default withRouter(CreateListOfMovies);
 

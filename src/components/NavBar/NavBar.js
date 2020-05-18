@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import bee from '../../images/bee.png';
 // import text from '../../images/textLogo.png';
 
-import SearchButton from '../SearchButton/SearchButton';
+import Search from '../Search/Search';
 
 const NavBar = () => {
-    return (
+    return (            
         <>
             <NavBarStyle />
 
@@ -17,7 +17,7 @@ const NavBar = () => {
                         <img className="bee-icon" alt="icon" src={bee}></img>
                     </Link>
                     <div className="search-item">
-                        <SearchButton />
+                        <Search />
                     </div>
 
                 </div>
