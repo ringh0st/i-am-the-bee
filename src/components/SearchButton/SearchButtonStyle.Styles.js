@@ -12,8 +12,3 @@ padding-bottom: 0.75rem;
 background:#272727;
 }
 `
-// .fa-search{
-//   color:white;
-//   padding-right:0.5rem;
-//   font-size:1rem;
-// }

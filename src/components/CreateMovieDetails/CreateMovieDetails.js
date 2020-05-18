@@ -4,7 +4,7 @@ import MoviePage from '../MoviePage/MoviePage';
 import noPoster from '../../images/no-poster-available.png';
 import comingSoon from '../../images/comingsoon.jpg';
 import noProfilePic from '../../images/noProfilepic.jpeg';
-import {fetchMovieById, fetchMovieTrailer, fetchPeoplesId,movieReviews} from '../../apis/tmdb';
+import { fetchMovieById, fetchMovieTrailer, fetchPeoplesId, movieReviews } from '../../apis/tmdb';
 import NavBar from '../NavBar/NavBar';
 // import MovieReviews from '../MovieReviews/MovieReviews';
 class MovieDetails extends React.Component {
@@ -15,34 +15,34 @@ class MovieDetails extends React.Component {
         movieCast: [],
         isLoading: false,
         fetchMovieById: null,
-        fetchMovieTrailer:null,
-        fetchPeoplesId:null,
-        movieReviews:null,
-        reviewlist:null
+        fetchMovieTrailer: null,
+        fetchPeoplesId: null,
+        movieReviews: null,
+        reviewlist: null
     };
     async componentDidMount() {
         const { id } = this.props.match.params
         console.log(id);
         console.log(fetchMovieById(id));
-        
-        
-        this.setState({ 
+
+
+        this.setState({
             fetchMovieById: await fetchMovieById(id),
             fetchPeoplesId: await fetchPeoplesId(id),
             movieReviews: await movieReviews(id)
         });
-    
+
         const omdb_key = "bc901512";
-        this.setState({ 
+        this.setState({
             isLoading: true,
-            imdbId:this.state.fetchMovieById.imdb_id,
+            imdbId: this.state.fetchMovieById.imdb_id,
         });
-        
+
 
         const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${this.state.imdbId}`);
         const castArr = this.state.fetchPeoplesId.cast
         this.setState({
-            fetchMovieTrailer:await fetchMovieTrailer(this.state.imdbId)
+            fetchMovieTrailer: await fetchMovieTrailer(this.state.imdbId)
         })
         let castProfilePic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w200/${picPath}` : noProfilePic;
         let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
@@ -59,14 +59,14 @@ class MovieDetails extends React.Component {
 
         let reviewlist = this.state.movieReviews.results
         let review = [];
-        for (let i=0; i < reviewlist.length; i ++){
+        for (let i = 0; i < reviewlist.length; i++) {
             review.push({
-                author:reviewlist[i].author,
-                content:reviewlist[i].content,
+                author: reviewlist[i].author,
+                content: reviewlist[i].content,
 
             })
         }
-        
+
         this.setState({ reviewlist: [...reviewlist] });
 
         let years = (x) => {
@@ -91,7 +91,7 @@ class MovieDetails extends React.Component {
             genre: omdbRes.data.Genre,
             trailer1: trailerFunction(trailerArr),
             director: omdbRes.data.Director,
-            backgroundPic:backDropPic(this.state.fetchMovieById.backdrop_path)
+            backgroundPic: backDropPic(this.state.fetchMovieById.backdrop_path)
             // trailer2:trailer.data.results[1].key,
             // trailer3:trailer.data.results[2].key
 
@@ -99,23 +99,18 @@ class MovieDetails extends React.Component {
         this.setState({ movie: movie, isLoading: false })
 
         console.log(this.state.movieReviews);
-        
+
     }
     render() {
         const spinner = () => {
             return (
-                <div className="ui segment">
-                    <div className="ui active dimmer">
-                        <div className="ui large text loader">Preparing Files</div>
-                    </div>
-                    <p></p>
-                </div>
+                <div className="ui large text loader">Preparing Files</div>
             );
         };
         const { isLoading } = this.state;
         return (
             <>
-                <NavBar/>
+                <NavBar />
                 {isLoading && spinner()}
                 <MoviePage imdbId={this.state.imdbId} movie={this.state.movie} movieCast={this.state.movieCast} />
                 {/* <MovieReviews reviewlist={this.state.reviewlist} /> */}

@@ -23,10 +23,20 @@ const NavBar = () => {
                 </div>
 
                 <div className="linksContainer">
-                    <Link className="link-item" to={"/latest/page/1"} >
+                    <Link className="link-item" to={{
+                        pathname: "/latest/page/1",
+                        state: {
+                            type: "latest"
+                        }
+                    }} >
                         <div >Latest Movies</div>
                     </Link>
-                    <Link className="link-item" to={"/top/page/1"} >
+                    <Link className="link-item" to={{
+                        pathname: "/top/page/1",
+                        state: {
+                            type: "top"
+                        }
+                    }} >
                         <div >Top Movies</div>
                     </Link>
                 </div>

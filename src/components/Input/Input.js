@@ -5,7 +5,6 @@ const Input =({ placeholder, value, updateSearch }) =>{
 
     return(
         <InputContainer 
-        type='search'
         placeholder={placeholder}     
         value={value}
         onChange={updateSearch}
