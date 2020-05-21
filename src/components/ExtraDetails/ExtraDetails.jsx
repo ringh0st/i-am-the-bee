@@ -7,7 +7,7 @@ const ExtraDetails = ({movie})=>{
         <ExtraDetailsContainer>
         <div>Run time: {movie.runtime}min</div>
         <div>Budget: {movie.budget}$</div>
-        <div className="cast">awards:{movie.awards}</div>
+        <div className="cast">awards: {movie.awards}</div>
         {/* <div className="cast">cast: {movie.casts}</div> */}
         </ExtraDetailsContainer>
     )
