@@ -39,6 +39,14 @@ const NavBar = () => {
                     }} >
                         <div >Top Movies</div>
                     </Link>
+                    <Link className="link-item" to={{
+                        pathname: "/revenue/page/1",
+                        state: {
+                            type: "revenue"
+                        }
+                    }} >
+                        <div >Box Office</div>
+                    </Link>
                 </div>
             </nav>
         </>

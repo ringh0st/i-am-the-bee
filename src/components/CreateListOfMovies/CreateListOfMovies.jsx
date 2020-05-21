@@ -1,9 +1,10 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import { tmdbLatestMovies, tmdbTopMovies,searchMovieName } from '../../apis/tmdb'
+import { tmdbLatestMovies, tmdbTopMovies,searchMovieName, tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
-import ListOfMovies from '../ListOfMovies/ListOfMovies'
+import ListOfMovies from '../ListOfMovies/ListOfMovies';
+// import Carousel from '../Carousel/Carousel'
 // import Search from '../Search/Search'
 
 
@@ -29,6 +30,8 @@ class CreateListOfMovies extends React.Component {
 
     async componentDidMount() {
         let pathName = this.props.location.state.type
+        console.log(pathName);
+        
         switch (pathName) {
             case "latest":
                 this.setState({
@@ -50,6 +53,13 @@ class CreateListOfMovies extends React.Component {
                     path: `search/q=${this.props.location.state.searchTerm}`,
                     searchValue:this.props.location.state.searchTerm,
                     api:searchMovieName
+                });
+                break;
+            case "revenue":
+                this.setState({
+                    tmdbData: await tmdbGreatMovies(1),
+                    path: "revenue",
+                    api:tmdbGreatMovies
                 });
                 break;
             default:

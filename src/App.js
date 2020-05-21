@@ -16,6 +16,7 @@ function App() {
           <BrowserRouter>
           <NavBar/> 
                 <Route path="/" exact component={HomePage}/>
+                <Route path="/revenue/page/:id" component={CreateListOfMovies}/>
                 <Route path="/latest/page/:id" component={CreateListOfMovies} />
                 <Route path="/top/page/:id" component={CreateListOfMovies} />
                 <Route path="/moviedetails/:id" component={CreateMovieDetails} />

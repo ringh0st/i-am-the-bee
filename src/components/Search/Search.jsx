@@ -3,13 +3,9 @@ import React from 'react';
 import CustomButton from '../CustomButton/CustomButton';
 import { SearchContainer } from './SearchStyle.Styles'
 import Input from '../Input/Input';
-// import { searchMovieName } from '../../apis/tmdb';
-// import MovieCard from '../MovieCard/MovieCard';
 import Button from '../Button/Button';
 import { withRouter } from 'react-router'
-// import { Redirect } from 'react-router'
-// import { Link } from 'react-router-dom';
-// import { useHistory } from "react-router-dom";
+
 
 
 class Search extends React.Component {

@@ -25,7 +25,7 @@ export const tmdbGreatMovies = async (page) => {
   const response = await tmdb.get(`discover/movie?api_key=${apiKey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&release_date.gte=1985&page=${page}`)
   return response.data;
 }
-// export const tmdb = async (page) => {
+// export const tmdbs = async (page) => {
 //   const response = await tmdb.get(`discover/movie?api_key=${apiKey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&release_date.gte=1985&page=${page}`)
 //   return response.data;
 // }
