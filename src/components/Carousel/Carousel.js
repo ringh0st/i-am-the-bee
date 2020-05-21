@@ -57,7 +57,7 @@ class Carousel extends React.Component {
 
         }
 
-        console.log(popularMovies);
+        // console.log(popularMovies);
 
     } 
     handleClick = (data) => {

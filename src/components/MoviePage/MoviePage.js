@@ -3,7 +3,7 @@ import "../MoviePage/moviePage.css";
 // import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
 // import icon from '../../images/beeandtextlogo.png';
-import BackButton from '../BackButton/BackButton';
+import BackButton from '../../components/BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 
 

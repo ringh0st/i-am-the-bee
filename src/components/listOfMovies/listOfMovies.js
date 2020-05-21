@@ -5,9 +5,9 @@ const ListOfMovies = ({movieItems, handleClick})=>{
 
     return(
         <div className="grid-container">
-        {movieItems.map((item) => {
+        {movieItems.map(item => {
             return (
-                <MovieCard className="grid-item" onClick={handleClick} tmdbId={item.tmdbId} key={item.id} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
+                <MovieCard className="grid-item" onClick={handleClick} tmdbId={item.tmdbId} key={item.tmdbId} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
             );
         })
         }

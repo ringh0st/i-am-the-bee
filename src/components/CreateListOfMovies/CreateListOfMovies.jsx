@@ -1,13 +1,11 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-// import "../ListOfMovies/ListOfMovies.css";
-import { tmdbLatestMovies, tmdbTopMovies } from '../../apis/tmdb'
+import { tmdbLatestMovies, tmdbTopMovies,searchMovieName } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png';
-// import MovieCard from '../MovieCard/MovieCard'
 import Pagination from '../Pagination/Pagination';
-import NavBar from '../NavBar/NavBar';
 import ListOfMovies from '../ListOfMovies/ListOfMovies'
-// import Carousel from '../Carousel/Carousel'
+// import Search from '../Search/Search'
+
 
 class CreateListOfMovies extends React.Component {
 
@@ -23,25 +21,35 @@ class CreateListOfMovies extends React.Component {
         path: null,
         winWidth: null,
         isLoading: false,
+        api:null,
+        searchValue:null,
 
     };
 
 
     async componentDidMount() {
-        // const { pathname } = this.props.location
-        const pathName = this.props.location.state.type
-
+        let pathName = this.props.location.state.type
         switch (pathName) {
             case "latest":
                 this.setState({
                     tmdbData: await tmdbLatestMovies(1),
-                    path: "latest"
+                    path: "latest",
+                    api:tmdbLatestMovies
                 });
                 break;
             case "top":
                 this.setState({
                     tmdbData: await tmdbTopMovies(1),
-                    path: "top"
+                    path: "top",
+                    api:tmdbTopMovies
+                });
+                break;
+            case "search":
+                this.setState({
+                    tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
+                    path: `search/q=${this.props.location.state.searchTerm}`,
+                    searchValue:this.props.location.state.searchTerm,
+                    api:searchMovieName
                 });
                 break;
             default:
@@ -65,6 +73,8 @@ class CreateListOfMovies extends React.Component {
     componentDidUpdate() {
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
         let moviesArray = this.state.tmdbData.results;
+        // console.log(moviesArray);
+        
 
         let years = (x) => {
             let y = x.split("-")
@@ -90,11 +100,15 @@ class CreateListOfMovies extends React.Component {
 
             }
         }
+        // console.log(this.state.tmdbData);
+
 
     }
 
     handleClick = (data) => {
         this.setState({ tmdbData: data, updateState: true })
+        console.log(data);
+        
     }
 
     render() {
@@ -104,11 +118,9 @@ class CreateListOfMovies extends React.Component {
             );
         };
         const { isLoading } = this.state;
-
         return (
             <>
-                <NavBar />
-                {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={tmdbLatestMovies} handleData={this.handleClick} buttonsForPagination={this.state.buttonsForPagination} />}
+                {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={this.state.api} handleData={this.handleClick} buttonsForPagination={this.state.buttonsForPagination} searchValue={this.state.searchValue} />}
                 {isLoading && spinner()}
                     {this.state.movieItems && this.state.movieItems &&
                         <ListOfMovies movieItems={this.state.movieItems} handleClick={this.handleClick} />

@@ -1,7 +1,7 @@
 import React from 'react';
-import {ButtonStyle} from '../CostomButton/CustomButtonStyle.styles'
+import {ButtonStyle} from './CustomButtonStyle.styles'
 
-const ConstomButton =({value}) =>{
+const CustomButton =({value}) =>{
     // debugger
 
     return(
@@ -11,4 +11,4 @@ const ConstomButton =({value}) =>{
     )
 }
 
-export default ConstomButton
+export default CustomButton
