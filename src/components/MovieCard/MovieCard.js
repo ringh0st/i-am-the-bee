@@ -15,11 +15,11 @@ const MovieCard = ({ tmdbId, title, poster, tmdbRating, year, handleClick }) => 
       <div className="container">
         <div className="movie-card">
           {/* <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} > */}
-          <div style={{backgroundColor:'grey'}}>          <img className="poster" alt={title} src={poster}></img>
-          <div style={{color:'white'}}>{title}</div></div>
+          {/* <div style={{backgroundColor:'grey'}}>           */}
+          <img className="poster" alt={title} src={poster}></img>
 
-
-          
+          {/* <div style={{color:'white'}}>{title}</div> */}
+          {/* </div> */}
           {/* </Link> */}
           <div className="movie-card-hover">
             <div className="movie-title">{title}</div>

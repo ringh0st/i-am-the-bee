@@ -27,7 +27,17 @@ class Search extends React.Component {
         }
 
         // console.log(this.props);
+        // let array = this.state.tmdbData.results
+        // let moviesResults = [];
+        // for (let i = 0; i < this.state.tmdbData.results.length; i++) {
+        //     moviesResults.push({
+        //         title: array[i].title,
+        //         tmdbId: array[i].tmdb_id,
+        //         // poster:array[i].poster, 
 
+        //     })
+        // }
+        // this.setState({ moviesResults: [...moviesResults] })
 
     }
     handleClick = () => { 
@@ -79,14 +89,3 @@ export default withRouter(Search)
 
 
         // console.log();
-        // let array = this.state.tmdbData.results
-        // let moviesResults = [];
-        // for (let i = 0; i < this.state.tmdbData.results.length; i++) {
-        //     moviesResults.push({
-        //         title: array[i].title,
-        //         tmdbId: array[i].tmdb_id,
-        //         // poster:array[i].poster, 
-
-        //     })
-        // }
-        // this.setState({ moviesResults: [...moviesResults] })
