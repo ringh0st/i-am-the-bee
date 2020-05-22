@@ -90,9 +90,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/listOfMovies/listOfMovies.css":
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/ListOfMovies/ListOfMovies.css":
 /*!*********************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/listOfMovies/listOfMovies.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/ListOfMovies/ListOfMovies.css ***!
   \*********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -351,7 +351,7 @@ const BackButton = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _listOfMovies_listOfMovies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../listOfMovies/listOfMovies */ "./src/components/listOfMovies/listOfMovies.js");
+/* harmony import */ var _ListOfMovies_ListOfMovies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ListOfMovies/ListOfMovies */ "./src/components/ListOfMovies/ListOfMovies.jsx");
 /* harmony import */ var _movieDetails_MovieDetails__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../movieDetails/MovieDetails */ "./src/components/movieDetails/MovieDetails.js");
 /* harmony import */ var _HomePage_HomePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../HomePage/HomePage */ "./src/components/HomePage/HomePage.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
@@ -385,7 +385,7 @@ class Container extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
       path: "/latest/page/:id",
       exact: true,
-      component: _listOfMovies_listOfMovies__WEBPACK_IMPORTED_MODULE_1__["default"],
+      component: _ListOfMovies_ListOfMovies__WEBPACK_IMPORTED_MODULE_1__["default"],
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -394,7 +394,7 @@ class Container extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
       path: "/top/page/:id",
-      component: _listOfMovies_listOfMovies__WEBPACK_IMPORTED_MODULE_1__["default"],
+      component: _ListOfMovies_ListOfMovies__WEBPACK_IMPORTED_MODULE_1__["default"],
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -1454,15 +1454,15 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/listOfMovies/listOfMovies.css":
+/***/ "./src/components/ListOfMovies/ListOfMovies.css":
 /*!******************************************************!*\
-  !*** ./src/components/listOfMovies/listOfMovies.css ***!
+  !*** ./src/components/ListOfMovies/ListOfMovies.css ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./listOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/listOfMovies/listOfMovies.css");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./ListOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/ListOfMovies/ListOfMovies.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1481,8 +1481,8 @@ var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addS
 if(content.locals) module.exports = content.locals;
 
 if(true) {
-	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./listOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/listOfMovies/listOfMovies.css", function() {
-		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./listOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/listOfMovies/listOfMovies.css");
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./ListOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/ListOfMovies/ListOfMovies.css", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./ListOfMovies.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/ListOfMovies/ListOfMovies.css");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -1509,9 +1509,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/listOfMovies/listOfMovies.js":
+/***/ "./src/components/ListOfMovies/ListOfMovies.jsx":
 /*!*****************************************************!*\
-  !*** ./src/components/listOfMovies/listOfMovies.js ***!
+  !*** ./src/components/ListOfMovies/ListOfMovies.jsx ***!
   \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1520,15 +1520,15 @@ if(true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _listOfMovies_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./listOfMovies.css */ "./src/components/listOfMovies/listOfMovies.css");
-/* harmony import */ var _listOfMovies_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_listOfMovies_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ListOfMovies_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListOfMovies.css */ "./src/components/ListOfMovies/ListOfMovies.css");
+/* harmony import */ var _ListOfMovies_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_ListOfMovies_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _apis_tmdb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../apis/tmdb */ "./src/apis/tmdb.js");
 /* harmony import */ var _images_no_poster_available_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/no-poster-available.png */ "./src/images/no-poster-available.png");
 /* harmony import */ var _images_no_poster_available_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_no_poster_available_png__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _MovieCard_MovieCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../MovieCard/MovieCard */ "./src/components/MovieCard/MovieCard.js");
 /* harmony import */ var _Pagination_Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Pagination/Pagination */ "./src/components/Pagination/Pagination.js");
 /* harmony import */ var _NavBar_NavBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../NavBar/NavBar */ "./src/components/NavBar/NavBar.js");
-var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/listOfMovies/listOfMovies.js";
+var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/ListOfMovies/ListOfMovies.jsx";
 
 
 
@@ -1537,7 +1537,7 @@ var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/li
 
  // import Slider from '../Slider/Slider';
 
-class listOfMovies extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class ListOfMovies extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -1685,7 +1685,7 @@ class listOfMovies extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (listOfMovies);
+/* harmony default export */ __webpack_exports__["default"] = (ListOfMovies);
 
 /***/ }),
 

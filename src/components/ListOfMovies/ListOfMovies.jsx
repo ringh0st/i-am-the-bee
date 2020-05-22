@@ -1,17 +1,17 @@
-import React from './node_modules/react';
+import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
-import './ListOfMovies.css';
+import {ListOfMoviesContainer} from './ListOfMoviesStyle.styles'
 const ListOfMovies = ({movieItems, handleClick})=>{
 
     return(
-        <div className="grid-container">
+        <ListOfMoviesContainer>
         {movieItems.map(item => {
             return (
                 <MovieCard className="grid-item" onClick={handleClick} tmdbId={item.tmdbId} key={item.tmdbId} year={item.year} title={item.title} releaseDate={item.releaseDate} poster={item.poster} tmdbRating={item.tmdbRating} />
             );
         })
         }
-    </div>
+    </ListOfMoviesContainer>
     )
 }
 export default ListOfMovies
