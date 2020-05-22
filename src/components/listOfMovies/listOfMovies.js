@@ -1,6 +1,6 @@
 import React from './node_modules/react';
 import MovieCard from '../MovieCard/MovieCard';
-import '../listOfMovies/ListOfMovies.css';
+import './ListOfMovies.css';
 const ListOfMovies = ({movieItems, handleClick})=>{
 
     return(

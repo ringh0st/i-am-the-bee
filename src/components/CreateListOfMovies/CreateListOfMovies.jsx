@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { tmdbLatestMovies, tmdbTopMovies,searchMovieName, tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
-import ListOfMovies from '../listOfMovies/ListOfMovies';
+import ListOfMovies from '../ListOfMovies/ListOfMovies';
 // import Carousel from '../Carousel/Carousel'
 // import Search from '../Search/Search'
 
