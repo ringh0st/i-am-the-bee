@@ -130,6 +130,7 @@ class CreateListOfMovies extends React.Component {
         const { isLoading } = this.state;
         return (
             <>
+            {   }
                 {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={this.state.api} handleData={this.handleClick} buttonsForPagination={this.state.buttonsForPagination} searchValue={this.state.searchValue} />}
                 {isLoading && spinner()}
                     {this.state.movieItems && this.state.movieItems &&

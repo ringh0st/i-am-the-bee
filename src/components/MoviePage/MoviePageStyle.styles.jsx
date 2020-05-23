@@ -12,13 +12,19 @@ export const BackDropImage = styled.div`
 
 `
 export const CastContainer = styled.div`
-display: flex;
-justify-content: space-between;
-align-items:flex-start ;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start ;
 `
 
 export const Trailer = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items:flex-start ;
+`
+export const MovieDetailsContainer = styled.div`
+    display: flex;
+    /* justify-content: space-between; */
+    align-items:center ;
+    flex-direction:column;
 `

@@ -14,10 +14,10 @@ const BasicDetails = ({movie})=>{
                 <Director>Director: {movie.director}</Director>
             </BasicInfoContainer>
             <Plot>Plot: {movie.overView}</Plot>
-            <div className="avg-vote">
-            <i id='star' className='fa fa-star fa-fw'></i>
+            {/* <div className="avg-vote">
+            <i id='star' className='fa fa-star fa-fw'></i> */}
             {/* <div className="tmdbRating">{tmdbRating}</div> */}
-            </div>
+            {/* </div> */}
             
     </BasicDetailsContainer>
     )

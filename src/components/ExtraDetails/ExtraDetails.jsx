@@ -1,13 +1,14 @@
 import React from 'react';
 
-import {ExtraDetailsContainer} from './ExtraDetailsStyle.styles'
+import {ExtraDetailsContainer,RunTime,Budget,Awards} from './ExtraDetailsStyle.styles'
 const ExtraDetails = ({movie})=>{
-
+    console.log(movie);
+    
     return(
         <ExtraDetailsContainer>
-        <div>Run time: {movie.runtime}min</div>
-        <div>Budget: {movie.budget}$</div>
-        <div className="cast">awards: {movie.awards}</div>
+        <RunTime>Run time: {movie.runtime}min</RunTime>
+        <Budget>Budget: {movie.budget}$</Budget>
+        <Awards>Awards: {movie.awards}</Awards>
         {/* <div className="cast">cast: {movie.casts}</div> */}
         </ExtraDetailsContainer>
     )

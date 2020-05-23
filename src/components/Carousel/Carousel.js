@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png'
 import { CarouselStyle } from './CarouselStyle.styles.js';
-import SliderItem from '../SliderItem/SliderItem';
+import HomePageSliderItem from '../SliderItem/HomePageSliderItem';
 // import CarouselData from '../CarouselData/CarouselData'
 
 class Carousel extends React.Component {
@@ -76,7 +76,9 @@ class Carousel extends React.Component {
             verticalSwiping: true,
             autoplay: true,
             speed: 3000,
-            autoplaySpeed: 6000,
+            autoplaySpeed: 5000,
+            fade: true,
+
         };
 
 
@@ -88,7 +90,7 @@ class Carousel extends React.Component {
                 <Slider {...settings} >
                     {this.state.randomArray && this.state.randomArray.map((item,key) => {
                         return (
-                            <SliderItem className="carousel-item" key={key} tmdbId={item.tmdbId} onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></SliderItem>
+                            <HomePageSliderItem className="carousel-item" key={key} tmdbId={item.tmdbId} onClick={this.handleClick} title={item.title} poster={item.poster} year={item.year}></HomePageSliderItem>
                         )
                     })}
                 </Slider>

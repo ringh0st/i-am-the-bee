@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
 // import BackButton from '../../components/BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 import Casts from '../Casts/Casts'
-import { MoviePageContainer, BackDropImage, CastContainer, Trailer } from './MoviePageStyle.styles'
+import { MoviePageContainer, BackDropImage, CastContainer, Trailer, MovieDetailsContainer } from './MoviePageStyle.styles'
 import BasicDetails from '../BasicDetails/BasicDetails'
 import ExtraDetails from '../ExtraDetails/ExtraDetails'
 
@@ -28,18 +28,19 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie, movieCa
         <>
             <MoviePageContainer>
                 <BackDropImage style={sectionStyle}></BackDropImage>
-
-                <BasicDetails movie={movie} />
-                <ExtraDetails movie={movie} />
-                <Trailer >
-                    <YouTube videoId={movie.trailer1} opts={opts} />
-                    {/* <YouTube videoId={movie.trailer2} opts={opts}/>
+                <MovieDetailsContainer>
+                    <BasicDetails movie={movie} />
+                    <ExtraDetails movie={movie} />
+                    <Trailer >
+                        <YouTube videoId={movie.trailer1} opts={opts} />
+                        {/* <YouTube videoId={movie.trailer2} opts={opts}/>
                         <YouTube videoId={movie.trailer3} opts={opts}/> */}
-                </Trailer>
+                    </Trailer>
                         CAST: <br />
-                <CastContainer>
-                    {movieCast && <Casts movieCast={movieCast} />}
-                </CastContainer>
+                    <CastContainer>
+                        {movieCast && <Casts movieCast={movieCast} />}
+                    </CastContainer>
+                </MovieDetailsContainer>
 
             </MoviePageContainer>
 

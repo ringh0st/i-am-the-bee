@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // import MovieReviews from '../MovieReviews/MovieReviews'
 
-const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
+const HomePageSliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
 
     return (
         <div className='slider-container'>
@@ -22,4 +22,4 @@ const SliderItem = ({ title, poster, year, tmdbId, handleClick }) => {
         </div>
     )
 }
-export default SliderItem
+export default HomePageSliderItem
