@@ -353,7 +353,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ListOfMovies_ListOfMovies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ListOfMovies/ListOfMovies */ "./src/components/ListOfMovies/ListOfMovies.jsx");
 /* harmony import */ var _movieDetails_MovieDetails__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../movieDetails/MovieDetails */ "./src/components/movieDetails/MovieDetails.js");
-/* harmony import */ var _HomePage_HomePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../HomePage/HomePage */ "./src/components/HomePage/HomePage.js");
+/* harmony import */ var _HomePage_HomePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../HomePage/HomePage */ "./src/components/HomePage/HomePage.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/Container/Container.js";
 
@@ -419,9 +419,9 @@ class Container extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./src/components/HomePage/HomePage.js":
+/***/ "./src/components/HomePage/HomePage.jsx":
 /*!*********************************************!*\
-  !*** ./src/components/HomePage/HomePage.js ***!
+  !*** ./src/components/HomePage/HomePage.jsx ***!
   \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -431,7 +431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _NavBar_NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../NavBar/NavBar */ "./src/components/NavBar/NavBar.js");
-var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/HomePage/HomePage.js";
+var _jsxFileName = "/Users/Rinny/Desktop/moviePrj/i-am-the-bee/src/components/HomePage/HomePage.jsx";
 
 
 

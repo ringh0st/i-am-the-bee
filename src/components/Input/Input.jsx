@@ -1,5 +1,5 @@
 import React from 'react';
-import {InputContainer} from '../Input/InputStyle.styles'
+import {InputContainer} from './InputStyle.styles'
 
 const Input =({ placeholder, value, updateSearch, type }) =>{
 

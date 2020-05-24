@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-
+import {Container} from './BackButtonStyle.styles'
 const BackButton = () => {
     let history = useHistory();
 
@@ -11,7 +11,7 @@ const BackButton = () => {
     }
     return(
         <>
-            <button onClick={onClickBack}>back</button>
+            <Container onClick={onClickBack}>back</Container>
         </>
     )
 }
