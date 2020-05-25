@@ -20,8 +20,11 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie, movieCa
             //   autoplay: 1,
         }
     }
+    
     let sectionStyle = {
-        backgroundImage: `url("${movie.backgroundPic}")`
+        backgroundImage: `url("${movie.backgroundPic}")`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
     };
 
     return (

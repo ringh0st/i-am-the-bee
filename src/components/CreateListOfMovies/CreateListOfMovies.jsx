@@ -100,7 +100,9 @@ class CreateListOfMovies extends React.Component {
                     poster: posterFunction(moviesArray[i].poster_path),
                     tmdbRating: moviesArray[i].vote_average,
                     year: years(moviesArray[i].release_date),
-                    tmdbId: moviesArray[i].id
+                    tmdbId: moviesArray[i].id,
+                    backPic:moviesArray[i].backdrop_path
+                    
                 })
             }
 
@@ -117,7 +119,6 @@ class CreateListOfMovies extends React.Component {
 
     handleClick = (data) => {
         this.setState({ tmdbData: data, updateState: true })
-        console.log(data);
         
     }
 
@@ -128,6 +129,7 @@ class CreateListOfMovies extends React.Component {
             );
         };
         const { isLoading } = this.state;
+        
         return (
             <>
             {   }

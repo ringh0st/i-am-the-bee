@@ -1,9 +1,20 @@
 import styled from 'styled-components';
+// import { keyframes } from 'styled-components'
+// const fadeInOpacity = keyframes`
+// 	0%{
+// 		opacity: 0;
+// 	}
+// 	100% {
+// 		opacity: 0.5;
+//     }
+// `;
 
 export const MovieCardPoster = styled.img`
     width:200px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
+    
+
 
 `
 
@@ -11,34 +22,25 @@ export const MovieCardContainer = styled.div`
     position: relative;
     text-align: center;
     z-index: 0;
-    margin: 30px;   
+    margin: 30px;
 `
 
+
 export const MovieCardInfo = styled.div`
-    display: none;
     background-color: rgba(0, 0, 0, 0.863);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-    animation-duration: 0.4s;
-    &animation{
-        @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
+    opacity: 0;
+    transition: 1s;
+    &:hover{
+        display:block;
+        opacity:1;
     }
-
+    
+    
 `
 
 export const MovieTitle = styled.div`
@@ -49,6 +51,7 @@ export const MovieTitle = styled.div`
     font-size: 1rem;
     right: 4px;
     left:4px;
+    
 `
 
 export const MovieReleaseDate = styled.div`
