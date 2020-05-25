@@ -8,7 +8,7 @@ class ChangeLanguage extends React.Component{
     }
     componentDidMount(){
         this.setState({
-            icon:<i class="fa fa-globe"></i>
+            icon:<i className="fa fa-globe"></i>
         })
     }
     render(){

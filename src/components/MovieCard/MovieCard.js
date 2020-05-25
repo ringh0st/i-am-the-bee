@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 // import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import {MovieCardContainer, MovieCardPoster, MovieCardInner,MovieCardInfo, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton,MovieRating, PosterContainer} from './MovieCardStyle.styled'
-const MovieCard = ({ tmdbId, title, poster, tmdbRating, year, handleClick }) => {
+import {MovieCardContainer,BackImage,MovieOverView, MovieCardPoster, MovieCardInner,MovieCardInfo, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton,MovieRating, PosterContainer} from './MovieCardStyle.styled'
+const MovieCard = ({ voteCount, overView,backPic, tmdbId, title, poster, tmdbRating, year, handleClick }) => {
 
   return (
     <> 
@@ -17,6 +17,7 @@ const MovieCard = ({ tmdbId, title, poster, tmdbRating, year, handleClick }) => 
       </PosterContainer>
       <MovieCardInfo>
       <MovieTitle>{title}</MovieTitle>
+      <BackImage alt={title} src={backPic} ></BackImage>
               <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
 
                 <MoreButton className="more-details">More &ensp;
@@ -24,6 +25,7 @@ const MovieCard = ({ tmdbId, title, poster, tmdbRating, year, handleClick }) => 
                 </MoreButton>
               </Link>
               <MovieReleaseDate>{year}</MovieReleaseDate>
+              <MovieOverView>{overView}</MovieOverView>
               <MovieAvgVote>
                 <i id='star' className='fa fa-star fa-fw'></i>
                 <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>

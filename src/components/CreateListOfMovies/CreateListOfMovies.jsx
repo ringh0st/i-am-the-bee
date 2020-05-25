@@ -4,6 +4,8 @@ import { tmdbLatestMovies, tmdbTopMovies,searchMovieName, tmdbGreatMovies } from
 import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
 import ListOfMovies from '../ListOfMovies/ListOfMovies';
+import comingSoon from '../../images/comingsoon.jpg';
+
 // import Carousel from '../Carousel/Carousel'
 // import Search from '../Search/Search'
 
@@ -82,8 +84,10 @@ class CreateListOfMovies extends React.Component {
 
     componentDidUpdate() {
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
+        let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
+
         let moviesArray = this.state.tmdbData.results;
-        // console.log(moviesArray);
+        console.log(moviesArray);
         
 
         let years = (x) => {
@@ -101,7 +105,9 @@ class CreateListOfMovies extends React.Component {
                     tmdbRating: moviesArray[i].vote_average,
                     year: years(moviesArray[i].release_date),
                     tmdbId: moviesArray[i].id,
-                    backPic:moviesArray[i].backdrop_path
+                    backPic:backDropPic(moviesArray[i].backdrop_path),
+                    voteCount:moviesArray[i].vote_count,
+                    overView:moviesArray[i].overview
                     
                 })
             }
