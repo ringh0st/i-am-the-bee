@@ -16,6 +16,8 @@ export const CastContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items:flex-start ;
+    font-family: 'Righteous',cursive;
+    color:white;
 `
 
 export const Trailer = styled.div`

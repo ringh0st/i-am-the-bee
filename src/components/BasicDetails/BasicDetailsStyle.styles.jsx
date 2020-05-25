@@ -9,16 +9,21 @@ export const BasicDetailsContainer = styled.div`
     align-items:flex-start ;
     /* margin: 20px; */
     color:white;
-    padding-left:10rem;
-    padding-right:10rem;
+    padding-left:13rem;
+    padding-right:13rem;
     background:black;
     opacity:0.6;
+    font-family: 'Righteous',cursive;
+
 }
 `
 export const Title = styled.div`
     font-size: 3rem;
     color:#DCCC37;
     padding-bottom:2rem;
+    font-variant-caps: small-caps;
+    font-family: 'Righteous',cursive;
+
 `
 export const Year = styled.div`
     font-size: 1.5rem;
