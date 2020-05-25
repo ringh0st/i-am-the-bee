@@ -2,14 +2,17 @@
 import styled from 'styled-components'
 
 export const BasicDetailsContainer = styled.div`
-    width: 70%;
+    /* width: 70%; */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items:flex-start ;
-    margin: 20px;
+    /* margin: 20px; */
     color:white;
-
+    padding-left:10rem;
+    padding-right:10rem;
+    background:black;
+    opacity:0.6;
 }
 `
 export const Title = styled.div`
@@ -51,4 +54,6 @@ export const BasicInfoContainer = styled.div`
     align-items:center;
     padding-top:2rem;
     padding-bottom:2rem;
+
+
 `

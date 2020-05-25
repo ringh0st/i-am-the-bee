@@ -5,9 +5,10 @@ import {BasicDetailsContainer, Title, Year,Genre, Director, Plot, BasicInfoConta
 const BasicDetails = ({movie})=>{
 
     return(
-        <BasicDetailsContainer>
-            <Title>{movie.title}</Title>
+        <>
+                    <Title>{movie.title}</Title>
 
+        <BasicDetailsContainer>
             <BasicInfoContainer>
                 <Year>Release year: {movie.year}</Year>
                 <Genre >{movie.genre}</Genre>
@@ -20,6 +21,7 @@ const BasicDetails = ({movie})=>{
             {/* </div> */}
             
     </BasicDetailsContainer>
+    </>
     )
 }
 export default BasicDetails

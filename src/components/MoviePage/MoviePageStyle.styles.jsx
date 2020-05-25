@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import backimage from '../../images/backGroundDirty.jpg'
 
 export const MoviePageContainer = styled.div`
 padding-top: 70px;
@@ -21,10 +22,18 @@ export const Trailer = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items:flex-start ;
+    background-image:url('${backimage}');
+    width:100%;
+
 `
 export const MovieDetailsContainer = styled.div`
     display: flex;
-    /* justify-content: space-between; */
     align-items:center ;
     flex-direction:column;
+`
+export const DetailsContainer = styled.div`
+    display: flex;
+    align-items:center ;
+    flex-direction:column;
+    background-image:url('${backimage}');
 `

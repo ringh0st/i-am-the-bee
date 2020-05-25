@@ -10,24 +10,24 @@ const MovieCard = ({ tmdbId, title, poster, tmdbRating, year, handleClick }) => 
 
   return (
     <> 
-<MovieCardContainer>
-    <MovieCardPoster alt={title} src={poster} ></MovieCardPoster>
-    <MovieCardInfo>
-    <MovieTitle>{title}</MovieTitle>
-            <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
+  <MovieCardContainer>
+      <MovieCardPoster alt={title} src={poster} ></MovieCardPoster>
+      <MovieCardInfo>
+      <MovieTitle>{title}</MovieTitle>
+              <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
 
-              <MoreButton className="more-details">More &ensp;
-              <i className="fa fa-chevron-circle-right"></i>
-              </MoreButton>
-            </Link>
-            <MovieReleaseDate>{year}</MovieReleaseDate>
-            <MovieAvgVote>
-              <i id='star' className='fa fa-star fa-fw'></i>
-              <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>
-            </MovieAvgVote>
-      
-    </MovieCardInfo>
-</MovieCardContainer>
+                <MoreButton className="more-details">More &ensp;
+                <i className="fa fa-chevron-circle-right"></i>
+                </MoreButton>
+              </Link>
+              <MovieReleaseDate>{year}</MovieReleaseDate>
+              <MovieAvgVote>
+                <i id='star' className='fa fa-star fa-fw'></i>
+                <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>
+              </MovieAvgVote>
+        
+      </MovieCardInfo>
+  </MovieCardContainer>
     </>
   );
 };

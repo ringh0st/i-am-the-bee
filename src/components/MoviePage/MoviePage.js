@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
 // import BackButton from '../../components/BackButton/BackButton';
 // import Slider from '../Slider/Slider'
 import Casts from '../Casts/Casts'
-import { MoviePageContainer, BackDropImage, CastContainer, Trailer, MovieDetailsContainer } from './MoviePageStyle.styles'
+import { MoviePageContainer, BackDropImage, CastContainer, Trailer, MovieDetailsContainer, DetailsContainer } from './MoviePageStyle.styles'
 import BasicDetails from '../BasicDetails/BasicDetails'
 import ExtraDetails from '../ExtraDetails/ExtraDetails'
 
@@ -20,11 +20,12 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie, movieCa
             //   autoplay: 1,
         }
     }
-    
+
     let sectionStyle = {
         backgroundImage: `url("${movie.backgroundPic}")`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundColor:'black'
     };
 
     return (
@@ -32,8 +33,12 @@ const MoviePage = ({ id, title, poster, tmdbRating, year, imdbId, movie, movieCa
             <MoviePageContainer>
                 <BackDropImage style={sectionStyle}></BackDropImage>
                 <MovieDetailsContainer>
-                    <BasicDetails movie={movie} />
-                    <ExtraDetails movie={movie} />
+                    
+                    <DetailsContainer>
+                        <BasicDetails movie={movie} />
+                        <ExtraDetails movie={movie} />
+                    </DetailsContainer>
+
                     <Trailer >
                         <YouTube videoId={movie.trailer1} opts={opts} />
                         {/* <YouTube videoId={movie.trailer2} opts={opts}/>
