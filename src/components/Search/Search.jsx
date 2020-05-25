@@ -14,7 +14,8 @@ class Search extends React.Component {
         searchTerm: "",
         placeholder: "Search for..",
         moviesResults: null,
-        isClean: false
+        isClean: false,
+        text:'go'
 
     }
 
@@ -70,7 +71,7 @@ class Search extends React.Component {
                         updateSearch={this.updateSearch}
                     />
  
-                        <Button handleClick={this.handleClick} />
+                        <Button handleClick={this.handleClick} content={this.state.text} />
                 </SearchContainer>
 
             </>

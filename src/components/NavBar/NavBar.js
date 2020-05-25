@@ -2,6 +2,7 @@ import React from 'react';
 import { NavBarStyle } from './NavBarStyle.styles.js';
 import { Link } from 'react-router-dom';
 import bee from '../../images/bee.png';
+import ChangeLanguage from '../ChangeLanguage/ChangeLanguage';
 // import text from '../../images/textLogo.png';
 
 import Search from '../../components/Search/Search';
@@ -47,6 +48,7 @@ const NavBar = () => {
                     }} >
                         <div >Box Office</div>
                     </Link>
+                    <ChangeLanguage/>
                 </div>
             </nav>
         </>

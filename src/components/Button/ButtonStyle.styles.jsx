@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ButtonContainer = styled.button`
 /* border-radius: var(--border-radius); */
 /* background: var(--primary-color); */
+
 background:none;
 /* padding-left: 1.5rem; */
 font-family: 'Righteous', cursive;

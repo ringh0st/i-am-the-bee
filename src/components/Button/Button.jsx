@@ -1,11 +1,11 @@
 import React from 'react';
 import {ButtonContainer} from '../Button/ButtonStyle.styles';
-const Button = ({handleClick}) => {
+const Button = ({handleClick, content}) => {
     return (
-      <ButtonContainer
+      <ButtonContainer 
         onClick={handleClick}
       >
-        Go
+        { content}
       </ButtonContainer>
     );
   };
