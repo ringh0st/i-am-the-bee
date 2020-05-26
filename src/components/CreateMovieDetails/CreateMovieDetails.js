@@ -38,7 +38,7 @@ class MovieDetails extends React.Component {
         });
 
 
-        const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${this.state.imdbId}`);
+        const omdbRes = await omdb.get(`?apikey=${omdb_key}&i=${this.state.imdbId}`);        
         const castArr = this.state.fetchPeoplesId.cast
         this.setState({
             fetchMovieTrailer: await fetchMovieTrailer(this.state.imdbId)
@@ -72,7 +72,6 @@ class MovieDetails extends React.Component {
             let y = x.split("-")
             return (y[0])
         }
-        console.log(this.state.fetchMovieTrailer);
 
         const trailerArr = this.state.fetchMovieTrailer.results;
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w500/${x}` : noPoster;
@@ -90,10 +89,9 @@ class MovieDetails extends React.Component {
             genre: omdbRes.data.Genre,
             trailer1: trailerFunction(trailerArr),
             director: omdbRes.data.Director,
-            backgroundPic: backDropPic(this.state.fetchMovieById.backdrop_path)
+            backgroundPic: backDropPic(this.state.fetchMovieById.backdrop_path)       
             // trailer2:trailer.data.results[1].key,
             // trailer3:trailer.data.results[2].key
-
         }
         this.setState({ movie: movie, isLoading: false })
 

@@ -36,25 +36,46 @@ export const PosterContainer = styled.div`
   backface-visibility: hidden;
   width:100%;
   height:100%;
+  border-top:    6px solid black;
+    border-right:  5px solid black; 
+    border-bottom: 6px solid black;  
+    border-left: 2px solid black;  
 
+    border-radius: 5px;
+    align-items:center;
+    display:flex;
+    justify-content:center;
 `
 
 export const MovieCardPoster = styled.img`
     width:200px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
-    border-top:    4px solid black;
-    border-right:  2px solid black; 
-    border-bottom: 4px solid black;
+    /* height:100%; */
+    /* box-shadow: 0px 0px 10px -2px rgba(0,0,0,1); */
+    /* border-top:    0.8px solid white;
+    border-right:  0.8px solid white; 
+    border-bottom: 0.8px solid white;   */
+    height: 100%;
 
 `
 
-
-
-
+export const MovieCoverInfo = styled.div`
+  display:flex;
+  flex-wrap:wrap;
+  background:black;
+  color:white;
+  text-align: justify;
+  font-size:0.3rem;
+  
+`
+export const MovieCoverInfoContainer = styled.div`
+  display:flex;
+  bottom:30px;
+  position:absolute;
+  
+`
 export const MovieCardInfo = styled.div`
   backface-visibility: hidden;
-    background-color: white;
+    background-color: black;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -63,33 +84,66 @@ export const MovieCardInfo = styled.div`
     transition: 1s;
     border-radius: 5px;
     transform: rotateY(180deg);
-    border-top:    4px solid black;
-    border-left:  3px solid black; 
-    border-bottom: 4px solid black;    
+    border-top:    6px solid black;
+    border-left:  5px solid black; 
+    border-bottom: 6px solid black;   
+     
     
 `
 
 export const MovieTitle = styled.div`
-    position: relative;
+    position: absolute;
     color: cornsilk;
     /* bottom: 8px;   */
     font-weight: 500;
     font-size: 1rem;
-    /* right: 4px;
-    left:4px; */
-    background:black;
-    padding-top:0.5rem;
-    padding-bottom:0.5rem;
-    width:100%;
+    right: 4px;
+    left:4px;
+    /* background:black; */
+    /* padding-top:0.5rem;
+    padding-bottom:0.5rem; */
+    /* width:100%; */
+    /* transform:rotate(-90deg); */
+    backface-visibility: hidden;
+
+    
     
 `
+export const MovieCardOfficialPoster = styled.img`
+  width:35%;
+  position:absolute;
+  right:0;
+  top:35%;
+  z-index:1;
+
+`
 export const MovieOverView = styled.div`
+background:rgba(5, 3, 3, 0.72);
+color:white;
+/* width:56%; */
+position:absolute;
+z-index:1;
+top:20%;
+font-size: 7px;
+/* opacity:0.5; */
+display:flex;
+flex-wrap:wrap;
+text-align: justify;
+float:left;
+margin:20px;
+margin-right:20%;
+
+
+/* padding:1rem; */
+
+
 
 `
 export const BackImage = styled.img`
-    /* position: absolute; */
+    position: relative;
     width:100%;
   /* height:100%; */
+  z-index:0;
 
 `
 export const MovieReleaseDate = styled.div`
@@ -110,13 +164,17 @@ export const MovieAvgVote = styled.div`
     right: 5px;
 `
 export const MoreButton = styled.div`
+
     position: absolute;
     color: rgb(255, 242, 65);
     font-weight: 500;
     font-size: 1.5rem;
-    bottom: 150px;  
+    z-index:1;
+    /* bottom: 150px;   */
     left: 4px;
     right:4px;
+    bottom:5px;
+    
 
 `
 export const MovieRating = styled.div`

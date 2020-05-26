@@ -13,7 +13,7 @@ let currentDate = d.toISOString().split('T')[0]
 
 
 export const  tmdbLatestMovies = async (page) => {
-  const response = await tmdb.get(`discover/movie?api_key=${apiKey}&vote_average.gte=5&with_original_language=en&language=en-US&sort_by=primary_release_date.desc&primary_release_date.lte=${currentDate}&include_adult=false&with_runtime.gte=70&include_video=false&page=${page}`)
+  const response = await tmdb.get(`discover/movie?api_key=${apiKey}&vote_average.gte=5&include_companiesw&ith_original_language=en&language=en-US&sort_by=primary_release_date.desc&primary_release_date.lte=${currentDate}&include_adult=false&with_runtime.gte=70&include_video=false&page=${page}`)
   return response.data;
 }
 export const  tmdbTopMovies = async (page) => {

@@ -31,8 +31,8 @@ class CreateListOfMovies extends React.Component {
 
 
     async componentDidMount() {
+        
         let pathName = this.props.location.state.type
-        console.log(pathName);
         
         switch (pathName) {
             case "latest":
@@ -107,8 +107,8 @@ class CreateListOfMovies extends React.Component {
                     tmdbId: moviesArray[i].id,
                     backPic:backDropPic(moviesArray[i].backdrop_path),
                     voteCount:moviesArray[i].vote_count,
-                    overView:moviesArray[i].overview
-                    
+                    overView:moviesArray[i].overview,
+                    popularity:moviesArray[i].popularity
                 })
             }
 

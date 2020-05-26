@@ -5,35 +5,48 @@ import { Link } from 'react-router-dom';
 // import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import {MovieCardContainer,BackImage,MovieOverView, MovieCardPoster, MovieCardInner,MovieCardInfo, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton,MovieRating, PosterContainer} from './MovieCardStyle.styled'
-const MovieCard = ({ voteCount, overView,backPic, tmdbId, title, poster, tmdbRating, year, handleClick }) => {
+import { MovieCardContainer, MovieCoverInfo, MovieCoverInfoContainer, MovieCardOfficialPoster, BackImage, MovieOverView, MovieCardPoster, MovieCardInner, MovieCardInfo, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton, MovieRating, PosterContainer } from './MovieCardStyle.styled'
+const MovieCard = ({ voteCount, overView, backPic, tmdbId, title, poster, tmdbRating, year, handleClick }) => {
 
   return (
-    <> 
-  <MovieCardContainer>
-    <MovieCardInner>
-    <PosterContainer>
-      <MovieCardPoster alt={title} src={poster} ></MovieCardPoster>
-      </PosterContainer>
-      <MovieCardInfo>
-      <MovieTitle>{title}</MovieTitle>
-      <BackImage alt={title} src={backPic} ></BackImage>
-              <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
+    <>
+      <MovieCardContainer>
+        <MovieCardInner>
+          <PosterContainer>
+            <MovieCardPoster alt={title} src={poster} ></MovieCardPoster>
+          </PosterContainer>
+          
+          <MovieCardInfo>
+            {/* <MovieTitle>{title}</MovieTitle> */}
+            <BackImage alt={title} src={backPic} ></BackImage>
+            <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
 
-                <MoreButton className="more-details">More &ensp;
+              <MoreButton>FOR MORE &ensp;
                 <i className="fa fa-chevron-circle-right"></i>
-                </MoreButton>
-              </Link>
-              <MovieReleaseDate>{year}</MovieReleaseDate>
-              <MovieOverView>{overView}</MovieOverView>
-              <MovieAvgVote>
-                <i id='star' className='fa fa-star fa-fw'></i>
-                <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>
-              </MovieAvgVote>
-        
-      </MovieCardInfo>
-      </MovieCardInner>
-  </MovieCardContainer>
+              </MoreButton>
+            </Link>
+            <MovieReleaseDate>{year}</MovieReleaseDate>
+            <div>
+            <MovieCardOfficialPoster alt={title} src={poster}></MovieCardOfficialPoster>
+
+            <MovieOverView>OVERVIEW:"{overView}"
+            </MovieOverView>
+            </div>
+
+            <MovieAvgVote>
+              <i id='star' className='fa fa-star fa-fw'></i>
+              <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>
+            </MovieAvgVote>
+            <MovieCoverInfoContainer>
+              <MovieCoverInfo>{title}© {year} Package Design and Supplementary Material Compilation © TMDB and OMDB api Inc. Distributed by Rinat Nadav Entertainment, 1985, Dakar St. Rosh HaAyin 4802560 IL, All rights reserved.</MovieCoverInfo>
+
+            </MovieCoverInfoContainer>
+          </MovieCardInfo>
+          <MovieTitle>{title}</MovieTitle>
+
+        </MovieCardInner>
+
+      </MovieCardContainer>
     </>
   );
 };
