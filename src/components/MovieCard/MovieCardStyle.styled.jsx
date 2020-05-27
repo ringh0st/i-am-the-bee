@@ -17,6 +17,7 @@ export const MovieCardContainer = styled.div`
     /* perspective: 1000px; */
     width:200px;
   height:300px;
+  
 
 `
 export const MovieCardInner = styled.div`
@@ -36,11 +37,10 @@ export const PosterContainer = styled.div`
   backface-visibility: hidden;
   width:100%;
   height:100%;
-  border-top:    6px solid black;
-    border-right:  5px solid black; 
-    border-bottom: 6px solid black;  
-    border-left: 2px solid black;  
-
+  border-top:    7px solid black;
+    border-right:  6px solid black; 
+    border-bottom: 7px solid black;  
+    /* border-left: 2px solid black;   */
     border-radius: 5px;
     align-items:center;
     display:flex;
@@ -49,12 +49,8 @@ export const PosterContainer = styled.div`
 
 export const MovieCardPoster = styled.img`
     width:200px;
-    /* height:100%; */
-    /* box-shadow: 0px 0px 10px -2px rgba(0,0,0,1); */
-    /* border-top:    0.8px solid white;
-    border-right:  0.8px solid white; 
-    border-bottom: 0.8px solid white;   */
     height: 100%;
+    
 
 `
 
