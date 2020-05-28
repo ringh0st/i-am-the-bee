@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import { MovieCardContainer, MovieCoverInfo, MovieCoverInfoContainer, MovieCardOfficialPoster, BackImage, MovieOverView, MovieCardPoster, MovieCardInner, MovieCardInfo, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton, MovieRating, PosterContainer } from './MovieCardStyle.styled'
+import { MovieCardContainer, MovieCoverInfo, MovieCoverInfoContainer, MovieCardOfficialPoster, BackImage, MovieOverView, MovieCardPoster, MovieCardInner, MovieCardBack, MovieTitle, MovieReleaseDate, MovieAvgVote, MoreButton, MovieRating, PosterContainer } from './MovieCardStyle.styled'
 const MovieCard = ({ voteCount, overView, backPic, tmdbId, title, poster, tmdbRating, year, handleClick }) => {
 
   return (
@@ -16,8 +16,7 @@ const MovieCard = ({ voteCount, overView, backPic, tmdbId, title, poster, tmdbRa
             <MovieCardPoster alt={title} src={poster} ></MovieCardPoster>
           </PosterContainer>
           
-          <MovieCardInfo>
-            {/* <MovieTitle>{title}</MovieTitle> */}
+          <MovieCardBack>
             <BackImage alt={title} src={backPic} ></BackImage>
             <Link onClick={handleClick} to={"/moviedetails/" + tmdbId} >
 
@@ -38,10 +37,10 @@ const MovieCard = ({ voteCount, overView, backPic, tmdbId, title, poster, tmdbRa
               <MovieRating className="tmdbRating">{tmdbRating}</MovieRating>
             </MovieAvgVote>
             <MovieCoverInfoContainer>
-              <MovieCoverInfo>{title}© {year} Package Design and Supplementary Material Compilation © TMDB and OMDB api Inc. Distributed by Rinat Nadav Entertainment, 1985, Dakar St. Rosh HaAyin 4802560 IL, All rights reserved.</MovieCoverInfo>
+              <MovieCoverInfo>{title} © {year} Package Design and Supplementary Material Compilation © TMDB and OMDB api Inc. Distributed by Rinat Nadav Entertainment, 1985, Dakar St. Rosh HaAyin 4802560 IL, All rights reserved.</MovieCoverInfo>
 
             </MovieCoverInfoContainer>
-          </MovieCardInfo>
+          </MovieCardBack>
           <MovieTitle>{title}</MovieTitle>
 
         </MovieCardInner>

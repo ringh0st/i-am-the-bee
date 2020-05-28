@@ -11,6 +11,10 @@ import styled from 'styled-components';
 export const MovieCardContainer = styled.div`
     /* position: relative; */
     text-align: center;
+    display:flex;
+
+  flex-wrap:wrap;
+  justify-content:center;
     /* z-index: 0; */
     margin: 30px;
     background-color: transparent;
@@ -69,7 +73,7 @@ export const MovieCoverInfoContainer = styled.div`
   position:absolute;
   
 `
-export const MovieCardInfo = styled.div`
+export const MovieCardBack = styled.div`
   backface-visibility: hidden;
     background-color: black;
     width: 100%;

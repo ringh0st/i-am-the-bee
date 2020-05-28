@@ -5,7 +5,7 @@ import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
 import ListOfMovies from '../ListOfMovies/ListOfMovies';
 import comingSoon from '../../images/comingsoon.jpg';
-
+import Spinner from '../Spinner/Spinner'
 // import Carousel from '../Carousel/Carousel'
 // import Search from '../Search/Search'
 
@@ -23,7 +23,7 @@ class CreateListOfMovies extends React.Component {
         buttonsForPagination: null,
         path: null,
         winWidth: null,
-        isLoading: false,
+        isLoading: true,
         api:null,
         searchValue:null,
 
@@ -39,14 +39,18 @@ class CreateListOfMovies extends React.Component {
                 this.setState({
                     tmdbData: await tmdbLatestMovies(1),
                     path: "latest",
-                    api:tmdbLatestMovies
+                    api:tmdbLatestMovies,
+                    isLoading: false,
+
                 });
                 break;
             case "top":
                 this.setState({
                     tmdbData: await tmdbTopMovies(1),
                     path: "top",
-                    api:tmdbTopMovies
+                    api:tmdbTopMovies,
+                    isLoading: false,
+
                 });
                 break;
             case "search":
@@ -54,14 +58,17 @@ class CreateListOfMovies extends React.Component {
                     tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
                     path: `search/q=${this.props.location.state.searchTerm}`,
                     searchValue:this.props.location.state.searchTerm,
-                    api:searchMovieName
+                    api:searchMovieName,
+                    isLoading: false,
                 });
                 break;
             case "revenue":
                 this.setState({
                     tmdbData: await tmdbGreatMovies(1),
                     path: "revenue",
-                    api:tmdbGreatMovies
+                    api:tmdbGreatMovies,
+                    isLoading: false,
+
                 });
                 break;
             default:
@@ -129,18 +136,18 @@ class CreateListOfMovies extends React.Component {
     }
 
     render() {
-        const spinner = () => {
-            return (
-                <h1 >Preparing Files</h1>
-            );
-        };
+        // const spinner = () => {
+        //     return (
+        //         <h1 >Preparing Files</h1>
+        //     );
+        // };
         const { isLoading } = this.state;
         
         return (
             <>
             {   }
                 {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={this.state.api} handleData={this.handleClick} buttonsForPagination={this.state.buttonsForPagination} searchValue={this.state.searchValue} />}
-                {isLoading && spinner()}
+                {isLoading && <Spinner/>}
                     {this.state.movieItems && this.state.movieItems &&
                         <ListOfMovies movieItems={this.state.movieItems} handleClick={this.handleClick} />
                         }

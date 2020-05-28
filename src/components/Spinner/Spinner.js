@@ -1,13 +1,12 @@
 import React from 'react';
-
-export default spinner = () => {
+import bee from '../../images/bee.png';
+import {SpinnerContainer} from './SpinnerStyle.styles'
+const Spinner = () => {
     return (
-    <div class="ui segment">
-    <div class="ui active inverted dimmer">
-        <div class="ui large text loader">Loading...</div>
-    </div>
+    <div>
+        <SpinnerContainer alt={'spinner'} src={bee} ></SpinnerContainer>
     </div>
     );
 };
 
- 
+export default Spinner;
