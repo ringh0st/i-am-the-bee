@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { BasicDetailsContainer, Title, Year, Genre, Director, Plot, BasicInfoContainer } from './BasicDetailsStyle.styles'
-
+import BackButton from '../BackButton/BackButton'
 const BasicDetails = ({ movie }) => {
 
     return (
@@ -19,7 +19,7 @@ const BasicDetails = ({ movie }) => {
             <i id='star' className='fa fa-star fa-fw'></i> */}
                 {/* <div className="tmdbRating">{tmdbRating}</div> */}
                 {/* </div> */}
-
+            <BackButton/>
             </BasicDetailsContainer>
         </>
     )
