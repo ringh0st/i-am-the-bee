@@ -35,7 +35,8 @@ class Search extends React.Component {
 
     }
     handleClick = () => { 
-        console.log(this.state.searchTerm);
+        // console.log(this.state.searchTerm);
+        console.log(props);
         
         this.props.history.push({
             pathname: `/search/q=${this.state.searchTerm}/page/1`,
