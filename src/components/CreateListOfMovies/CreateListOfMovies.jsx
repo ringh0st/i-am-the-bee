@@ -54,6 +54,8 @@ class CreateListOfMovies extends React.Component {
                 });
                 break;
             case "search":
+                console.log(this.props.location.state.searchTerm);
+                
                 this.setState({
                     tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
                     path: `search/q=${this.props.location.state.searchTerm}`,
@@ -94,7 +96,6 @@ class CreateListOfMovies extends React.Component {
         let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
 
         let moviesArray = this.state.tmdbData.results;
-        console.log(moviesArray);
         
 
         let years = (x) => {

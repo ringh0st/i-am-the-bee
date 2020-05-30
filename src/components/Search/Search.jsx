@@ -20,13 +20,6 @@ class Search extends React.Component {
     }
 
     async componentDidUpdate() {
-        if(this.state.isClean){
-            this.setState({
-                searchTerm: "",
-                isClean: false
-            })
-        }
-
         // console.log(this.props);
         // let array = this.state.tmdbData.results
         // let moviesResults = [];
@@ -42,6 +35,8 @@ class Search extends React.Component {
 
     }
     handleClick = () => { 
+        console.log(this.state.searchTerm);
+        
         this.props.history.push({
             pathname: `/search/q=${this.state.searchTerm}/page/1`,
             state: {
@@ -53,12 +48,15 @@ class Search extends React.Component {
     
 
     updateSearch = (e) => {
+        console.log(this.state.searchTerm);
+
+        // this.setState({searchTerm: ""})
+
         this.setState({ searchTerm: e.target.value })
         // console.log(e.target.value);
     }
 
     render() {
-        
         return (
             <>
                 <SearchContainer primary>
