@@ -2,7 +2,6 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import {ListOfMoviesContainer} from './ListOfMoviesStyle.styles'
 const ListOfMovies = ({movieItems, handleClick})=>{
-console.log(movieItems);
 
     return(
         <ListOfMoviesContainer>

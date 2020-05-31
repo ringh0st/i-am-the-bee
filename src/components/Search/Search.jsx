@@ -14,8 +14,8 @@ class Search extends React.Component {
         searchTerm: "",
         placeholder: "Search for..",
         moviesResults: null,
-        isClean: false,
-        text:'go'
+        isClean: true,
+        text: 'go'
 
     }
 
@@ -34,43 +34,42 @@ class Search extends React.Component {
         // this.setState({ moviesResults: [...moviesResults] })
 
     }
-    handleClick = () => { 
-        // console.log(this.state.searchTerm);
-        console.log(props);
-        
+    handleClick = (e) => {
+        console.log(this.context);
+        e.preventDefault();
+
         this.props.history.push({
             pathname: `/search/q=${this.state.searchTerm}/page/1`,
             state: {
                 type: "search",
-                searchTerm: this.state.searchTerm
+                searchTerm: this.state.searchTerm,
             }
         })
     }
-    
+
 
     updateSearch = (e) => {
-        console.log(this.state.searchTerm);
-
-        // this.setState({searchTerm: ""})
-
         this.setState({ searchTerm: e.target.value })
-        // console.log(e.target.value);
+
     }
 
     render() {
+
         return (
             <>
                 <SearchContainer primary>
-                    <CustomButton value={this.state.searchTerm} ></CustomButton>
-                    <Input
+                    {/* <CustomButton value={this.state.searchTerm} ></CustomButton> */}
+                    {/* <Input
                         type="text"
                         placeholder={this.state.placeholder}
                         value={this.state.searchTerm}
-                        // updateSearch={this.updateSearch}
                         updateSearch={this.updateSearch}
-                    />
- 
-                        <Button handleClick={this.handleClick} content={this.state.text} />
+                    /> */}
+                    <form onSubmit={this.handleClick}>
+                            <input type="text" placeholder={this.state.placeholder} value={this.state.searchTerm} onChange={this.updateSearch} />
+                        <input type="submit" value="Submit" />
+                    </form>
+                    {/* <Button type="submit" handleClick={this.handleClick} content={this.state.text} /> */}
                 </SearchContainer>
 
             </>

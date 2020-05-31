@@ -54,7 +54,7 @@ class CreateListOfMovies extends React.Component {
                 });
                 break;
             case "search":
-                console.log(this.props.location.state.searchTerm);
+                // console.log(this.props.location.state.searchTerm);
                 
                 this.setState({
                     tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
