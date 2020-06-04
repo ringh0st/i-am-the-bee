@@ -1,25 +1,13 @@
 import styled from 'styled-components';
-// import { keyframes } from 'styled-components'
-// const fadeInOpacity = keyframes`
-// 	0%{
-// 		opacity: 0;
-// 	}
-// 	100% {
-// 		opacity: 0.5;
-//     }
-// `;
-export const MovieCardContainer = styled.div`
-    /* position: relative; */
-    text-align: center;
-    display:flex;
 
+export const MovieCardContainer = styled.div`
+  text-align: center;
+  display:flex;
   flex-wrap:wrap;
   justify-content:center;
-    /* z-index: 0; */
-    margin: 30px;
-    background-color: transparent;
-    /* perspective: 1000px; */
-    width:200px;
+  margin: 30px;
+  background-color: transparent;
+  width:200px;
   height:300px;
   
 
@@ -31,7 +19,6 @@ export const MovieCardInner = styled.div`
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   &:hover{
     transform: rotateY(180deg);
   }
@@ -42,18 +29,17 @@ export const PosterContainer = styled.div`
   width:100%;
   height:100%;
   border-top:    7px solid black;
-    border-right:  6px solid black; 
-    border-bottom: 7px solid black;  
-    /* border-left: 2px solid black;   */
-    border-radius: 5px;
-    align-items:center;
-    display:flex;
-    justify-content:center;
+  border-right:  6px solid black; 
+  border-bottom: 7px solid black;  
+  border-radius: 5px;
+  align-items:center;
+  display:flex;
+  justify-content:center;
 `
 
 export const MovieCardPoster = styled.img`
-    width:200px;
-    height: 100%;
+  width:200px;
+  height: 100%;
     
 
 `
@@ -86,7 +72,7 @@ export const MovieCardBack = styled.div`
     transform: rotateY(180deg);
     border-top:    6px solid black;
     border-left:  5px solid black; 
-    border-bottom: 6px solid black;   
+    border-bottom: 6px solid black;  
      
     
 `
@@ -94,16 +80,10 @@ export const MovieCardBack = styled.div`
 export const MovieTitle = styled.div`
     position: absolute;
     color: cornsilk;
-    /* bottom: 8px;   */
     font-weight: 500;
     font-size: 1rem;
     right: 4px;
     left:4px;
-    /* background:black; */
-    /* padding-top:0.5rem;
-    padding-bottom:0.5rem; */
-    /* width:100%; */
-    /* transform:rotate(-90deg); */
     backface-visibility: hidden;
 
     

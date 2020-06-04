@@ -15,7 +15,7 @@ class Search extends React.Component {
         placeholder: "Search for..",
         moviesResults: null,
         isClean: true,
-        text: 'go'
+        text:'go'
 
     }
 
@@ -34,10 +34,8 @@ class Search extends React.Component {
         // this.setState({ moviesResults: [...moviesResults] })
 
     }
-    handleClick = (e) => {
-        console.log(this.context);
-        e.preventDefault();
-
+    handleClick = (e) => {    
+        
         this.props.history.push({
             pathname: `/search/q=${this.state.searchTerm}/page/1`,
             state: {
@@ -46,7 +44,7 @@ class Search extends React.Component {
             }
         })
     }
-
+    
 
     updateSearch = (e) => {
         this.setState({ searchTerm: e.target.value })
@@ -54,22 +52,18 @@ class Search extends React.Component {
     }
 
     render() {
-
+        
         return (
             <>
                 <SearchContainer primary>
-                    {/* <CustomButton value={this.state.searchTerm} ></CustomButton> */}
-                    {/* <Input
+                    <CustomButton value={this.state.searchTerm} ></CustomButton>
+                    <Input
                         type="text"
                         placeholder={this.state.placeholder}
                         value={this.state.searchTerm}
                         updateSearch={this.updateSearch}
-                    /> */}
-                    <form onSubmit={this.handleClick}>
-                            <input type="text" placeholder={this.state.placeholder} value={this.state.searchTerm} onChange={this.updateSearch} />
-                        <input type="submit" value="Submit" />
-                    </form>
-                    {/* <Button type="submit" handleClick={this.handleClick} content={this.state.text} /> */}
+                    />
+                        <Button  handleClick={this.handleClick} content={this.state.text} />
                 </SearchContainer>
 
             </>
