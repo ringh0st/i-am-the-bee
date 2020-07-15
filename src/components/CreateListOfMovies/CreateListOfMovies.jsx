@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import { tmdbLatestMovies, tmdbTopMovies,searchMovieName, tmdbGreatMovies } from '../../apis/tmdb'
+import { tmdbLatestMovies, tmdbTopMovies, tmdbGreatMovies } from '../../apis/tmdb'
 import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
 import ListOfMovies from '../ListOfMovies/ListOfMovies';

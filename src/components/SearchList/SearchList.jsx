@@ -7,8 +7,6 @@ import Pagination from "../Pagination/Pagination";
 import ListOfMovies from "../ListOfMovies/ListOfMovies";
 import comingSoon from "../../images/comingsoon.jpg";
 import Spinner from "../Spinner/Spinner";
-// import Carousel from '../Carousel/Carousel'
-// import Search from '../Search/Search'
 
 class SearchList extends React.Component {
   state = {
