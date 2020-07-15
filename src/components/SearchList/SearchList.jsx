@@ -1,7 +1,6 @@
 import React from "react";
 import equal from "fast-deep-equal";
 import { withRouter } from "react-router-dom";
-
 import noPoster from "../../images/no-poster-available.png";
 import Pagination from "../Pagination/Pagination";
 import ListOfMovies from "../ListOfMovies/ListOfMovies";

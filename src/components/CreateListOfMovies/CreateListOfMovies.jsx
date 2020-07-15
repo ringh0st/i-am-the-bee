@@ -59,6 +59,15 @@ class CreateListOfMovies extends React.Component {
                 break;
             default:
         }
+            //put this in componentDidMount and trigger a render each time the window width changes in your componentDidUpdate
+    this.setState({
+        winWidth: window.innerWidth <= 800 && window.innerHeight <= 600,
+      });
+      if (this.state.winWidth === false) {
+        this.setState({ buttonsForPagination: 5 });
+      } else {
+        this.setState({ buttonsForPagination: 3 });
+      }
     }
 
     componentDidUpdate() {
@@ -109,7 +118,6 @@ class CreateListOfMovies extends React.Component {
         const { isLoading } = this.state;
         return (
             <>
-            {   }
                 {this.state.tmdbData && this.state.buttonsForPagination && <Pagination path={this.state.path} buttonsNumber={this.state.buttonsForPagination} data={this.state.tmdbData} api={this.state.api} handleData={this.handleClick} buttonsForPagination={this.state.buttonsForPagination} searchValue={this.state.searchValue} />}
                 {isLoading && <Spinner/>}
                     {this.state.movieItems && this.state.movieItems &&
