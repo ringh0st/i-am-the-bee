@@ -26,15 +26,16 @@ class CreateListOfMovies extends React.Component {
         isLoading: true,
         api:null,
         searchValue:null,
+        pathName:null
 
     };
 
 
     async componentDidMount() {
-        
-        let pathName = this.props.location.state.type
-        
-        switch (pathName) {
+        this.setState({pathName:this.props.location.state.type}) 
+        // let pathName = this.props.location.state.type
+        let pathN = this.state.pathName
+        switch (pathN) {
             case "latest":
                 this.setState({
                     tmdbData: await tmdbLatestMovies(1),
@@ -54,7 +55,7 @@ class CreateListOfMovies extends React.Component {
                 });
                 break;
             case "search":
-                // console.log(this.props.location.state.searchTerm);
+                console.log(this.props.location.state.searchTerm);
                 
                 this.setState({
                     tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
@@ -92,6 +93,7 @@ class CreateListOfMovies extends React.Component {
     }
 
     componentDidUpdate() {
+        
         let posterFunction = (x) => x !== null ? `https://image.tmdb.org/t/p/w1280/${x}` : noPoster;
         let backDropPic = (picPath) => picPath !== null ? `https://image.tmdb.org/t/p/w1280/${picPath}` : comingSoon
 

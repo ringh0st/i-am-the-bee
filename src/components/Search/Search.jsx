@@ -6,8 +6,6 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { withRouter } from 'react-router'
 
-
-
 class Search extends React.Component {
     state = {
         tmdbData: null,
@@ -19,23 +17,15 @@ class Search extends React.Component {
 
     }
 
-    async componentDidUpdate() {
-        // console.log(this.props);
-        // let array = this.state.tmdbData.results
-        // let moviesResults = [];
-        // for (let i = 0; i < this.state.tmdbData.results.length; i++) {
-        //     moviesResults.push({
-        //         title: array[i].title,
-        //         tmdbId: array[i].tmdb_id,
-        //         // poster:array[i].poster, 
 
-        //     })
-        // }
-        // this.setState({ moviesResults: [...moviesResults] })
-
+    updateSearch = (e) => {
+        this.setState({ searchTerm: e.target.value })                 
     }
-    handleClick = (e) => {    
-        
+    handleClick = (e) => {  
+        e.preventDefault();
+
+        console.log(this.state.searchTerm);
+   
         this.props.history.push({
             pathname: `/search/q=${this.state.searchTerm}/page/1`,
             state: {
@@ -43,16 +33,13 @@ class Search extends React.Component {
                 searchTerm: this.state.searchTerm,
             }
         })
-    }
-    
-
-    updateSearch = (e) => {
         this.setState({ searchTerm: e.target.value })
+        console.log(this.state.searchTerm);
 
     }
 
     render() {
-        
+
         return (
             <>
                 <SearchContainer primary>
@@ -65,20 +52,11 @@ class Search extends React.Component {
                     />
                         <Button  handleClick={this.handleClick} content={this.state.text} />
                 </SearchContainer>
-
             </>
         )
     }
+    
 }
 
 export default withRouter(Search)
 
-
-
-
-
-
-
-
-
-        // console.log();
