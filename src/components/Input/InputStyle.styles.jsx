@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const InputContainer = styled.input`
 background-color:transparent;
@@ -11,4 +11,4 @@ font-size:1rem;
     outline-style: none;
   }
 
-`
+`;
