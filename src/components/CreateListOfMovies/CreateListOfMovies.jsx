@@ -5,10 +5,7 @@ import noPoster from '../../images/no-poster-available.png';
 import Pagination from '../Pagination/Pagination';
 import ListOfMovies from '../ListOfMovies/ListOfMovies';
 import comingSoon from '../../images/comingsoon.jpg';
-import Spinner from '../Spinner/Spinner'
-// import Carousel from '../Carousel/Carousel'
-// import Search from '../Search/Search'
-
+import Spinner from '../Spinner/Spinner';
 
 class CreateListOfMovies extends React.Component {
 
@@ -30,12 +27,9 @@ class CreateListOfMovies extends React.Component {
 
     };
 
-
     async componentDidMount() {
-        this.setState({pathName:this.props.location.state.type}) 
         // let pathName = this.props.location.state.type
-        let pathN = this.state.pathName
-        switch (pathN) {
+        switch (this.props.location.state.type) {
             case "latest":
                 this.setState({
                     tmdbData: await tmdbLatestMovies(1),
@@ -54,17 +48,6 @@ class CreateListOfMovies extends React.Component {
 
                 });
                 break;
-            case "search":
-                console.log(this.props.location.state.searchTerm);
-                
-                this.setState({
-                    tmdbData: await searchMovieName(1, this.props.location.state.searchTerm),
-                    path: `search/q=${this.props.location.state.searchTerm}`,
-                    searchValue:this.props.location.state.searchTerm,
-                    api:searchMovieName,
-                    isLoading: false,
-                });
-                break;
             case "revenue":
                 this.setState({
                     tmdbData: await tmdbGreatMovies(1),
@@ -75,21 +58,7 @@ class CreateListOfMovies extends React.Component {
                 });
                 break;
             default:
-            //none
         }
-
-        //put this in componentDidMount and trigger a render each time the window width changes in your componentDidUpdate
-        this.setState({
-            winWidth: ((window.innerWidth <= 800) && (window.innerHeight <= 600))
-        })
-        if (this.state.winWidth === false) {
-            // console.log("this is a computer screen");
-            this.setState({ buttonsForPagination: 5 })
-        } else {
-            this.setState({ buttonsForPagination: 3 })
-        }
-
-
     }
 
     componentDidUpdate() {
@@ -128,9 +97,7 @@ class CreateListOfMovies extends React.Component {
 
             }
         }
-        // console.log(this.state.tmdbData);
-
-
+        console.log(this.state.tmdbData);
     }
 
     handleClick = (data) => {
@@ -139,13 +106,7 @@ class CreateListOfMovies extends React.Component {
     }
 
     render() {
-        // const spinner = () => {
-        //     return (
-        //         <h1 >Preparing Files</h1>
-        //     );
-        // };
         const { isLoading } = this.state;
-        
         return (
             <>
             {   }
