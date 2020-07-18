@@ -10,10 +10,10 @@ font-family: 'Righteous', cursive;
 border:0;
 padding:0;
 padding-right:1.5rem;
-font-size:1.2rem;
+font-size:1.3rem;
 /* position: absolute; */
 color:var(--primary-color);    
-text-shadow: -1px -1px 1px white;
+/* text-shadow: -1px -1px 1px white; */
 outline: none;
 }
 &:hover{
